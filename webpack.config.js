@@ -43,10 +43,13 @@ module.exports = {
                 loader: 'babel-loader',
             }]
     },
-    // resolve: {
-    //     root: path.resolve('./src'),
-    //     extenstions: ['', '.js']
-    // },
+    resolve: {
+        // root: path.resolve('./src'),
+        extensions: ['.js','.jsx', 'css', 'scss'],
+        alias: {
+            "@app": `${__dirname}/src/components`
+        }
+    },
     plugins: [
         // new webpack.DefinePlugin({ PRODUCTION: "'true'" }),
         // new MiniCssExtractPlugin({ filename: 'kang.css' }),
