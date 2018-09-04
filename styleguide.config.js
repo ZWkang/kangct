@@ -25,7 +25,7 @@ module.exports = {
             // content: join('/docs/button.md'),
             components: function () {
                 return joinMap([
-                    './src/components/Button/Buttons.js'
+                    './src/components/Button/index.js'
                 ])
             }
         }
