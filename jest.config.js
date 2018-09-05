@@ -31,7 +31,7 @@ module.exports = {
     moduleNameMapper: {
     //   '\\.(css|less|s(c|a)ss)$': '<rootDir>/../__mocks__/style.js',
     //   'services(.*)$': '<rootDir>/services$1',
-        "^react$": "<rootDir>/node_modules/react",
+        // "^react$": "<rootDir>/node_modules/react",
         "^.+\\.scss$": "<rootDir>/__test__/__mocks__/css-transform.js",
         "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__test__/__mocks__/fileMock.js",
         "^@app(.*)$": "<rootDir>/src/components$1",
