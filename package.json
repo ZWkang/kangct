@@ -1,0 +1,75 @@
+{
+  "name": "agamemnon",
+  "version": "1.0.0",
+  "title": "Agamemnon",
+  "description": "一个简单的",
+  "keywords": [
+    "agamemnon",
+    "ui",
+    "component",
+    "components",
+    "react",
+    "styled-components"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest --env=jsdom --config ./jest.config.js",
+    "test:watch": "jest --env=jsdom --config ./jest.config.js --watch",
+    "start": "npm run dev",
+    "dev": "npx styleguidist server",
+    "lint": "eslint --ignore-path .gitignore ./src",
+    "build": "webpack",
+    "build:doc": "npx styleguidist build",
+    "deploy:doc": "./publish-doc.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZWkang/Agamemnon.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZWkang/Agamemnon/issues"
+  },
+  "homepage": "https://github.com/ZWkang/Agamemnon#readme",
+  "private": true,
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-webpack-loaders": "^0.8.0",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-env": "^1.1.6",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "cross-env": "^5.0.0",
+    "css-loader": "^0.26.1",
+    "enzyme": "^3.4.1",
+    "enzyme-adapter-react-16": "^1.4.0",
+    "eslint": "^3.13.0",
+    "jest": "^22.4.3",
+    "module-hot-update": "0.0.8",
+    "node-sass": "^4.5.0",
+    "react-test-renderer": "^15.6.2",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^4.17.2",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "babel-jest": "^23.4.2",
+    "enzyme-adapter-react-16": "^1.4.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "prop-types": "^15.5.10",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-styleguidist": "^7.3.5",
+    "webpack-cli": "^3.1.0"
+  }
+}
