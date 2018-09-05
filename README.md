@@ -1,5 +1,5 @@
 # Agamemnon
-> a simple lib with componet
+> a simple lib with component
 
 ---
 
