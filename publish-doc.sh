@@ -7,13 +7,14 @@ npx styleguidist build
 git checkout gh-pages
 
 # move doc file
-cp ./styleguide/* ./
+cp -r ./styleguide/* ./
 
 # all all change
-git add *
+git add index.html
+git add build
 
 # git commit 
-git commit -a -m "gh-pages updated `date + '%Y-%m-%d %H:%M:%S'`"
+git commit -m "gh-pages updated `date +'%Y-%m-%d %H:%M:%S'`"
 
 # git pull
 git pull --rebase origin gh-pages
