@@ -3,9 +3,16 @@
 # Build style guide 
 npx styleguidist build
 
+# save git stash
+git stash save
+
 # checkout gh-pages branch
 git checkout gh-pages
 
+# pop git stash
+git stash pop
+
+git rm -rf !(./gh-pages|publish-doc.sh)
 # move doc file
 cp ./styleguide/* ./
 
