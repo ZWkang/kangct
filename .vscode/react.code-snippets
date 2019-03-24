@@ -1,0 +1,184 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"New-Use-File": {
+		"prefix": "nbf",
+		"body": [
+			"import React, { Component } from 'react'",
+			"import PropTypes from 'prop-types'",
+			"import '${2:${TM_FILENAME_BASE}}.${3:scss}'",
+			"\n",
+			"class ${4:${TM_FILENAME_BASE}} from Component {",
+			"  constructor(props) {",
+			"    super(props)",
+			"    $5",
+			"  }",
+			"export default ${4:${TM_FILENAME_BASE}}",
+			""
+		],
+		"scope": "javascript"
+	},
+	"New-Use-File-Redux-Connect": {
+		"prefix": "nbfrc",
+		"body": [
+			"import React, { Component } from 'react'",
+			"import PropTypes from 'prop-types'",
+			"import { connect } from 'react-redux'",
+			"import '${2:${TM_FILENAME_BASE}}.${3:scss}'",
+			"",
+			"function mapStateToProps(state) {",
+			"  $6",
+			"  return {",
+			"    userInfo: state.user.userInfo",
+			"  }",
+			"}",
+			"",
+			"@connect(mapStateToProps, ${null)",
+			"class ${4:${TM_FILENAME_BASE}} from Component {",
+			"  constructor(props) {",
+			"    super(props)",
+			"    ",
+			"  }",
+			"}",
+			"",
+			"export default ${4:${TM_FILENAME_BASE}}",
+			""
+		],
+		"scope": "javascript",
+		"description": "生成一个带redux connect的react组件内容"
+	},
+	"New-Use-File-Redux-Router": {
+		"prefix": "nbfrr",
+		"body": [
+			"import React, { Component } from 'react'",
+			"import PropTypes from 'prop-types'",
+			"import { connect } from 'react-redux'",
+			"import { withRouter } from 'react-router-dom'",
+			"import '${2:${TM_FILENAME_BASE}}.${3:scss}'",
+			"",
+			"function mapStateToProps(state) {",
+			"  $6",
+			"  return {",
+			"    userInfo: state.user.userInfo",
+			"  }",
+			"}",
+			"",
+			"@withRouter",
+			"@connect(mapStateToProps, ${null)",
+			"class ${4:${TM_FILENAME_BASE}} from Component {",
+			"  constructor(props) {",
+			"    super(props)",
+			"    ",
+			"  }",
+			"}",
+			"",
+			"export default ${4:${TM_FILENAME_BASE}}",
+			""
+		],
+		"scope": "javascript, typescript",
+		"description": "生成一个带redux connect react-router的react组件内容"
+	},
+	"Import-Modules": {
+		"prefix": "imm",
+		"body": "import $2 from '$1'",
+		"description": "导入一个模块"
+	},
+	"Import-Modules-Split": {
+		"prefix": "imms",
+		"body": "import { $2 } from '$1'",
+		"scope": "javascript",
+		"description": "导入一个模块解构"
+	},
+	"React-PropTypes.array": {
+		"scope": "javascript",
+		"prefix": "pta",
+		"body": [
+			"PropTypes.array$0",
+		],
+		"description": "React-PropTypes.array"
+	},
+	"React-PropTypes.func": {
+		"scope": "javascript",
+		"prefix": "ptf",
+		"body": [
+			"PropTypes.func$0",
+		],
+		"description": "React-PropTypes.func"
+	},
+	"React-PropTypes.shape": {
+		"scope": "javascript",
+		"prefix": "pts",
+		"body": [
+			"PropTypes.shape($0)",
+		],
+		"description": "React-PropTypes.shape"
+	},
+	"React-PropTypes.number": {
+		"scope": "javascript",
+		"prefix": "ptn",
+		"body": [
+			"PropTypes.number$0",
+		],
+		"description": "React-PropTypes.number"
+	},
+	"React-PropTypes.string": {
+		"scope": "javascript",
+		"prefix": "ptst",
+		"body": [
+			"PropTypes.string$0",
+		],
+		"description": "React-PropTypes.string"
+	},
+	"React-PropTypes.bool": {
+		"scope": "javascript",
+		"prefix": "ptb",
+		"body": [
+			"PropTypes.bool$0",
+		],
+		"description": "React-PropTypes.bool"
+	},
+	"New-A-Statless-Function-Component": {
+		"scope": "javascript",
+		"prefix": "nsfc",
+		"body": [
+			"const $1 = ({ ${2:props} }) => {",
+			"  $3",
+			"  return (",
+			"    $4",
+			"  )",
+			"}",
+			""
+		],
+		"description": "生成一个基本无状态函数组件"
+	},
+	"New-A-Styles-Components-Generator": {
+		"scope": "javascript",
+		"prefix": "nascg",
+		"body": [
+			"import React, { Component } from 'react'",
+			"import PropTypes from 'prop-types'",
+			"import styled${1} from 'styled-components'",
+			"",
+			"const ${3:${TM_FILENAME_BASE}} = styled.${2:div}`",
+			"  ${5}",
+			"`",
+			"export default ${3:${TM_FILENAME_BASE}}",
+			""
+		],
+		"description": "生成一个基本无状态函数组件"
+	}
+}
