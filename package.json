@@ -17,10 +17,13 @@
     "test:watch": "jest --env=jsdom --config ./jest.config.js --watch",
     "start": "npm run dev",
     "dev": "npx styleguidist server",
-    "lint": "eslint --ignore-path .gitignore ./src",
+    "lint": "eslint --ext .js src",
+    "lint:js": "eslint ./src/**/*.js",
     "build": "webpack",
     "build:doc": "npx styleguidist build",
-    "deploy:doc": "./publish-doc.sh"
+    "deploy:doc": "./publish-doc.sh",
+    "lint:css": "stylelint ./packages/**/*.js",
+    "prebuild": "npm run lint:css && npm run lint:js"
   },
   "repository": {
     "type": "git",
@@ -34,7 +37,7 @@
   "private": true,
   "devDependencies": {
     "babel-core": "^6.21.0",
-    "babel-eslint": "^7.1.1",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dev-expression": "^0.2.1",
@@ -50,26 +53,36 @@
     "css-loader": "^0.26.1",
     "enzyme": "^3.4.1",
     "enzyme-adapter-react-16": "^1.4.0",
-    "eslint": "^3.13.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react-hooks": "^1.6.0",
     "jest": "^22.4.3",
     "module-hot-update": "0.0.8",
     "node-sass": "^4.5.0",
     "react-test-renderer": "^15.6.2",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.13.1",
+    "stylelint": "^10.0.1",
+    "stylelint-config-recommended": "^2.2.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.6.0",
     "url-loader": "^0.5.7",
     "webpack": "^4.17.2",
-    "webpack-dev-server": "^2.4.5"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^2.4.5",
     "babel-jest": "^23.4.2",
     "enzyme-adapter-react-16": "^1.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-react": "^7.12.4",
     "mini-css-extract-plugin": "^0.4.2",
+    "webpack-cli": "^3.1.0",
+    "react-styleguidist": "^7.3.5"
+  },
+  "dependencies": {
+    "react-hot-loader": "^3.0.0-beta.7",
     "prop-types": "^15.5.10",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-hot-loader": "^3.0.0-beta.7",
-    "react-styleguidist": "^7.3.5",
-    "webpack-cli": "^3.1.0"
+    "react-dom": "^16.4.2"
   }
 }
