@@ -7,11 +7,11 @@ const defaultCallback = function (a, b, c) {}
 
 const DefaultFallBackComponent = ({ props }) => {
     return <div>
-        <div style={{color: 'red'}}>
+    <div style={{color: 'red'}}>
             {props.error}
         </div>
         <div style={{color: 'red'}}>
-            {props.componentStack.toString()}
+        {props.componentStack.toString()}
         </div>
     </div>
 }
