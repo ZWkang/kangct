@@ -3,15 +3,19 @@ import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 
 
-const defaultCallback = function (a, b, c) {}
+const defaultCallback = function (a, b, c) {
+    throw b
+}
 
-const DefaultFallBackComponent = ({ props }) => {
+const DefaultFallBackComponent = ({ error, componentStack }) => {
+    {console.log(error)}
     return <div>
     <div style={{color: 'red'}}>
-            {props.error}
+            {error.message}
         </div>
-        <div style={{color: 'red'}}>
-        {props.componentStack.toString()}
+        <div style={{color: 'green'}}>
+        {console.log(componentStack)}
+        {componentStack.join('\n')}
         </div>
     </div>
 }
@@ -39,10 +43,14 @@ class ErrorBoundaries extends Component {
         const { children, FallBackComponent = DefaultFallBackComponent, ...restProps } = this.props
         const { error, info } = this.state
         if (error) {
-            return (<FallBackComponent error componentStack={info.componentStack}/>)
+            return (<FallBackComponent error={error} componentStack={info.componentStack}/>)
         }
         return <Fragment>{children}</Fragment>
     }
 }
-
+/**
+ * you can write some in here you know?
+ * 
+ * @component
+ */
 export default ErrorBoundaries
