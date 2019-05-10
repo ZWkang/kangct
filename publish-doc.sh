@@ -18,8 +18,11 @@ git rm -rf `ls | grep -v "node_modules" | grep -v "styleguide"`
 # move doc file
 cp -rf ./styleguide/* ./
 
+# clean file
+rm -rf styleguide
+
 # all all change
-git add *
+git add .
 
 # git commit 
 git commit -a -m "gh-pages updated `date +'%Y-%m-%d %H:%M:%S'`"
