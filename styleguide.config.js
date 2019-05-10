@@ -23,11 +23,13 @@ module.exports = {
         {
             name: 'Components',
             // content: join('/docs/button.md'),
-            components: function () {
-                return joinMap([
-                    './src/components/Button/index.js'
-                ])
-            }
+            // components: function () {
+            //     return joinMap([
+            //         './src/components/ErrorBoundaries/index.js',
+            //         './src/components/Button/index.js'
+            //     ])
+            // }
+            components: './src/components/**/index.js'
         }
     ],
     theme: {
