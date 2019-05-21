@@ -23,11 +23,13 @@ module.exports = {
         {
             name: 'Components',
             // content: join('/docs/button.md'),
-            components: function () {
-                return joinMap([
-                    './src/components/Button/index.js'
-                ])
-            }
+            // components: function () {
+            //     return joinMap([
+            //         './src/components/ErrorBoundaries/index.js',
+            //         './src/components/Button/index.js'
+            //     ])
+            // }
+            components: './src/components/**/index.js'
         }
     ],
     theme: {
@@ -71,8 +73,13 @@ module.exports = {
         // path.join(__dirname, 'path/to/styles.css')
     ],
     getExampleFilename(componentPath) {
-        return componentPath.replace(/\.jsx?$/, '.examples.md')
-      }
+        let componentList= componentPath.split('/')
+        // console.log(componentList[componentList.length - 1])
+        let componentName = componentList[componentList.length - 2].toLowerCase()
+        
+        // return componentPath.replace(/\.jsx?$/, '.examples.md')
+        return path.resolve(__dirname, 'docs', componentName + '.md')
+    }
       // 替换默认的md  file.jsx ===>  默认的readme.md ===> file+.examples.md
 
 }
