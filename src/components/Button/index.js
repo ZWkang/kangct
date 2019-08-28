@@ -1,10 +1,19 @@
 import React from 'react';
-import styled from 'styled-components'
-import is from 'styled-is'
+import styled from 'styled-components';
+import is from 'styled-is';
 
-const Button = styled.button.attrs({
-    disabled: props => (props.disabled === true ? props.disabled : false)
-})`
+const noop = () => {};
+
+const Button = styled.button.attrs((props) => ({
+    disabled: props.disabled === true ? props.disabled : false,
+    active: props.disabled === true ? props.active : false,
+    role: 'botton',
+    tabIndex: 0
+}))`
+    & + &{
+        margin-left: 10px;
+    }
+    appearance: none;
     cursor: pointer;
     appearance: none;
     border-radius: 6px;
@@ -49,11 +58,11 @@ const Button = styled.button.attrs({
     ${is('shadow')`
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
     `}
-`
+`;
 
 /**
  * you can write some in here you know?
- * 
- * @component
+ *
+ * @components
  */
-export default Button
+export default Button;
