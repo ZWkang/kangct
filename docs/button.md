@@ -1,15 +1,19 @@
 ### size
+
 ```jsx
 
 <Button small>small size</Button>
-<Button hover>normal size</Button>
+<Button>normal size</Button>
 <Button medium>medium size</Button>
 <Button big>biggest size</Button>
 ```
 
 ### shadow
+
 ```js
-<Button big hover shadow>biggest size</Button>
+<Button big hover shadow>
+  biggest size
+</Button>
 ```
 
 ### full
@@ -28,4 +32,24 @@
 
 ```js
 <Button hover>full mode</Button>
+```
+
+### Group
+
+```js
+<Button.Group>
+  <Button hover>full mode</Button>
+  <Button hover>full mode</Button>
+  <Button hover>full mode</Button>
+  <Button hover>full mode</Button>
+</Button.Group>
+```
+
+```js
+<Button.Group vertical>
+  <Button hover>full mode</Button>
+  <Button hover>full mode</Button>
+  <Button hover>full mode</Button>
+  <Button hover>full mode</Button>
+</Button.Group>
 ```
