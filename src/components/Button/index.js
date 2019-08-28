@@ -33,12 +33,17 @@ const BtnBaseStyle = css`
   text-decoration: none;
 `;
 
-const Button = styled.button.attrs({
-  disabled: (props) => (props.disabled === true ? props.disabled : false),
-  active: (props) => (props.disabled === true ? props.active : false),
+const noop = () => {};
+
+const Button = styled.button.attrs((props) => ({
+  disabled: props.disabled === true ? props.disabled : false,
+  active: props.disabled === true ? props.active : false,
   role: 'botton',
   tabIndex: 0
-})`
+}))`
+    & + &{
+        margin-left: 10px;
+    }
     appearance: none;
     cursor: pointer;
     border-radius: 6px;
@@ -121,6 +126,6 @@ Button.Group = Group;
 /**
  * you can write some in here you know?
  *
- * @component
+ * @components
  */
 export { Button as default };

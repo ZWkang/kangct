@@ -6,14 +6,13 @@ const Group = styled.div`
   display: flex;
   flex-direction: row;
   > * {
-    margin-left: 0;
+    margin-left: 0!important;
     margin-right: 0;
     min-height: 2em;
     height: auto;
   }
   > *:not(:first-child):not(:last-child) {
     border-radius: 0;
-    /* border-width: 0!important; */
   }
   ${isNot('vertical')`
     > *:first-child {
