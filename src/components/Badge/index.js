@@ -51,8 +51,8 @@ const Wrapper = ({ children, content }) => {
   );
 };
 Wrapper.propsTypes = {
-  children: PropTypes.any,
-  content: PropTypes.any
+  children: PropTypes.node,
+  content: PropTypes.node
 };
 
 Badge.Wrapper = Wrapper;
