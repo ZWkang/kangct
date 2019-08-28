@@ -1,81 +1,58 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import Breadcrumb from './index'
-import Icon from '../Icon/index'
-import HomeImage from '../Icon/home.png'
-
-
+import React from 'react';
+import styled, { css } from 'styled-components';
+import BreadcrumbWrapper from './BreadcrumbWrapper';
+import Icon from '../Icon/index';
+import HomeImage from '../Icon/home.png';
+import is from 'styled-is';
 
 const BreadcrumbItemMixin = css`
-  align-items: center;
-  color: red;
-  display: flex;
-  justify-content: center;
-  padding: 0 .75em;
-`
+  padding: 0 0.75em;
+  cursor: pointer;
+`;
 
 const Alink = styled.a`
+  color: #0275d8;
+  text-decoration: none;
   ${BreadcrumbItemMixin}
-  &:link{
-    color: #ccc;
+  &:link {
+    color: #0275d8;
   }
-  &:visited{
-    color: #000;
+  &:visited {
+    color: #0275d8;
   }
-  &:hover{
-    color: #0a0a0a;
+  &:hover {
+    color: #014c8c;
     cursor: pointer;
+    text-decoration: underline;
+    outline-width: 0;
   }
-  &:active{
+  &:active {
     color: #0a0a0a;
     cursor: default;
-    pointer-events: none;
+    outline-width: 0;
   }
+`;
 
-`
-
-const Span = styled.span`
+const Span = styled.span.attrs((props) => {
+  ariaCurrent: props.last ? 'page' : '';
+})`
   ${BreadcrumbItemMixin}
-`
+`;
 
 const LiCom = styled.li`
-  align-items: center;
-  display: flex;
+  display: inline;
   &:first-child a {
     padding-left: 0;
   }
 
   & + li:before {
     color: #cccccc;
-    content: "\0002f"
+    content: '\0002f';
   }
-`
 
+  ${is('hidden')`
+    display: none;
+  `}
+`;
 
-class BreadCrumbItem extends React.Component{
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    const { children, conf } = this.props
-    return (<Breadcrumb>
-      <ul>
-      {conf.map((value, index) => {
-        // const Icon = value.Icon || <div></div>
-        return (
-          <LiCom key={index}>
-            <Icon size-small customStyle={`
-              background: red;
-            `}><img src={HomeImage}></img></Icon>
-            {/* <Icon/> */}
-            {value.link ?(<Alink className={'is-active'}>{value.label}</Alink>) :  <Span>{value.label}</Span> }
-          </LiCom>
-        )
-      })}
-      </ul>
-    </Breadcrumb>)
-  }
-}
-
-
-export default BreadCrumbItem
+export { Span, Alink, LiCom };
