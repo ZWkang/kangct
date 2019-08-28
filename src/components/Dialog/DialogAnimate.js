@@ -4,6 +4,7 @@ import is, { isNot } from 'styled-is';
 import Animated from '../Animate/help';
 import DialogContent from './DialogCntent';
 import DialogTitle from './DialogTitle';
+import FTR from 'focus-trap-react';
 
 const enter = keyframes`
   from {
@@ -130,30 +131,26 @@ class DialogAnimate extends React.Component {
   };
   render() {
     const { isShow } = this.state;
-    const { duration, onClose } = this.props;
-
+    const { duration, onClose, children } = this.props;
+    if (!isShow) return null;
     return (
-      <Animate
-        onAnimationEnd={this.handleAnimationEnd}
-        animationType={this.state.animationType}
-        onKeyUp={this.handleEscCode}
-        aria-modal="true"
-        ref={(ref) => (this.animateRef = ref)}
-        tabIndex="-1"
-        display={isShow}
-        duration={duration}
-      >
-        {isShow && <div tabIndex="0" />}
-        <AnimateMask onClick={onClose} />
-        <DialogWrapper>
-          <DialogTitle>title</DialogTitle>
-          <DialogContent maxWidth={'small'} maxHeight={'small'}>
-            {this.props.children}
-            <button role="button">cancel</button>
-          </DialogContent>
-        </DialogWrapper>
-        {isShow && <div tabIndex="0" />}
-      </Animate>
+      <FTR>
+        <Animate
+          onAnimationEnd={this.handleAnimationEnd}
+          animationType={this.state.animationType}
+          onKeyUp={this.handleEscCode}
+          aria-modal="true"
+          ref={(ref) => (this.animateRef = ref)}
+          tabIndex="0"
+          display
+          duration={duration}
+        >
+          <div tabIndex="0" />
+          <AnimateMask onClick={onClose} />
+          {children}
+          <div tabIndex="0" />
+        </Animate>
+      </FTR>
     );
   }
 }

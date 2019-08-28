@@ -24,14 +24,17 @@ const controlMaxWidth = (props) => {
     minWidth: maxWidthSizeMap[props.maxWidth] || maxWidthSizeMap['normal']
   };
 };
-const DialogContent = styled.div`
-
+const DialogContent = styled.div.attrs({
+  tabIndex: 0
+})`
+  z-index: 100;
   display: flex;
   flex-direction: column;
   /* align-content: center; */
   /* justify-content: center; */
   overflow-y: auto;
   overflow-x: auto;
+  border-radius: 1rem;
   ${is('overflow')`
         overflow: hidden;
     `}

@@ -7,6 +7,7 @@ const DialogTitle = styled(H6)`
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   margin: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 `;
 
 export default DialogTitle;

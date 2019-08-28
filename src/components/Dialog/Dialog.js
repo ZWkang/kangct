@@ -1,7 +1,8 @@
 import DialogAnimate from './DialogAnimate';
 import React from 'react';
 import Protal from '../Protal';
-
+import DialogContent from './DialogCntent';
+import DialogTitle from './DialogTitle';
 class Dialog extends React.Component {
   render() {
     const { props } = this;
@@ -12,7 +13,12 @@ class Dialog extends React.Component {
     );
   }
 }
+
+Dialog.DialogContent = DialogContent;
+
+Dialog.DialogTitle = DialogTitle;
+
 /**
- * @component
+ * @components
  */
 export default Dialog;
