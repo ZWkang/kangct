@@ -40,20 +40,29 @@ const TabsItem = styled.li`
 const TabsItemWrapper = (props) => {
   const { active } = props;
   const node = useRef(false);
-
+  // console.log(props);
   function checkRefFocus() {
     if (active && node.current) {
       node.current.focus();
     }
   }
-  useEffect(() => {
+  useUpdateEffect(() => {
     checkRefFocus();
   }, [props.active]);
 
   return <TabsItem {...props} ref={node} />;
 };
-
+function useUpdateEffect(effect, deps) {
+  const mounted = useRef(false);
+  useEffect(() => {
+    if (mounted.current) {
+      effect();
+    } else {
+      mounted.current = true;
+    }
+  }, deps);
+}
 /**
- * @component
+ * @components
  */
 export default TabsItemWrapper;
