@@ -35,7 +35,8 @@ class Tab extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectIndex: props.activeIndex || 0
+      selectIndex: props.activeIndex || 0,
+      focused: false
     };
   }
   handleTabKeyDown = (e) => {
@@ -61,7 +62,7 @@ class Tab extends Component {
           const count = tabs.length;
 
           const ensureIndex = (selectIndex - 1 + count) % count;
-          console.log(selectIndex, count, ensureIndex);
+          // console.log(selectIndex, count, ensureIndex);
           return {
             selectIndex: ensureIndex
           };
@@ -98,11 +99,26 @@ class Tab extends Component {
       selectIndex: item
     });
   };
+
+  handleFocus = () => {
+    debugger;
+    if (this.state.focused) return;
+    // console.log()
+    // debugger;
+    this.setState({
+      focused: true
+    });
+  };
+  handleBlur = () => {
+    this.setState({
+      focused: false
+    });
+  };
   handleRenderBody = () => {
     const { activeIndex, renderBody, tabs } = this.props;
     const { selectIndex } = this.state;
     return (
-      <Flex>
+      <Flex onClick={this.handleFocus} onFocus={this.handleFocus} onBlur={this.handleBlur}>
         {tabs.map((tab, index) => {
           const { body, name } = tab;
           return (
@@ -141,6 +157,7 @@ class Tab extends Component {
                 tabIndex={isSelect ? 0 : -1}
                 active={isSelect}
                 onClick={this.handleItemClick.bind(this, index)}
+                focused={this.state.focused}
               >
                 {name}
               </TabsItem>
