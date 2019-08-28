@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { transfromData } from '../../utils';
+import { transfromData } from '../util/index.js';
 import warning from 'warning';
 
 const BASIC_SIZE = 10;
