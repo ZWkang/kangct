@@ -1,11 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-import { bounce } from 'react-animations';
+import Animate from './Animate';
+import Animation from './help';
 
-const bounceAnimation = keyframes`${bounce}`;
-
-const BouncyDiv = styled.div`
-  animation: 1s ${bounceAnimation};
-`;
-
-
-export default BouncyDiv
+export { Animate as default, Animation };
