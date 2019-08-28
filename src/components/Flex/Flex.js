@@ -1,38 +1,37 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import is from 'styled-is'
-import { FlexPropsTypes, FlexCommonPorps } from './props.js'
+import React from 'react';
+import styled, { css } from 'styled-components';
+import is from 'styled-is';
+import { FlexPropsTypes, FlexCommonPorps } from './props.js';
 /* default options*/
 
 // 样式分离
 
 // css in js
 
-const DefaultCssString  = `
+const DefaultCssString = `
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-content: stretch;
-`
+`;
 
 const FullDefaultOption = `
   width: 100%;
   height: 100%;
   flex-basis: 100%;
-`
+`;
 
 const CenterDefaultOption = `
   align-items: center;
   justify-content: center;
-`
-
+`;
 
 const Flex = styled.div`
   ${DefaultCssString}
 
   ${is('display')`
-    display: ${props => props.display}
+    display: ${(props) => props.display}
   `}
 
   ${is('full')`
@@ -44,35 +43,38 @@ const Flex = styled.div`
   `}
 
   ${is('flexDirection')`
-    flex-direction: ${props => props.flexDirection}
+    flex-direction: ${(props) => props.flexDirection}
   `}
 
   ${is('flexWrap')`
-    flex-wrap: ${props => props.flexWrap}
+    flex-wrap: ${(props) => props.flexWrap}
   `}
 
   ${is('flexFlow')`
-    flex-flow: ${props => props.flexFlow}
+    flex-flow: ${(props) => props.flexFlow}
   `}
 
   ${is('justifyContent')`
-    justify-content: ${props => props.justifyContent}
+    justify-content: ${(props) => props.justifyContent}
   `}
 
   ${is('alignItems')`
-    align-items: ${props => props.alignItems}
+    align-items: ${(props) => props.alignItems}
   `}
 
   ${is('alignContent')`
-    align-content: ${props => props.alignContent}
+    align-content: ${(props) => props.alignContent}
   `}
 
   ${is('customStyle')`
-    ${props => props.customStyle}
+    ${(props) => props.customStyle}
   `}
-`
+`;
 
-Flex.PropTypes = FlexPropsTypes
-Flex.defaultProps = FlexCommonPorps
+Flex.propTypes = FlexPropsTypes;
+Flex.defaultProps = FlexCommonPorps;
 
-export default Flex
+/**
+ * @components Flex
+ */
+export default Flex;
