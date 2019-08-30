@@ -1,8 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import BreadcrumbWrapper from './BreadcrumbWrapper';
-import Icon from '../Icon/index';
-import HomeImage from '../Icon/home.png';
 import is from 'styled-is';
 
 const BreadcrumbItemMixin = css`

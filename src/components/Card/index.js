@@ -6,4 +6,4 @@ import React from 'react';
  */
 // export { Card as default };
 
-export default Card;
+export { Card as default };

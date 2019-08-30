@@ -5,4 +5,4 @@ import Tab from './Tab';
 /**
  * @components
  */
-export { Tab };
+export { Tab as default };
