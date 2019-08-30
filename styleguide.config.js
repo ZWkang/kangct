@@ -28,7 +28,7 @@ module.exports = {
       //         './src/components/Button/index.js'
       //     ])
       // }
-      components: './src/components/**/index.js'
+      components: './src/components/!(util)**/index.js'
     },
     {
       name: '个人思考/my think',
