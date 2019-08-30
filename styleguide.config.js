@@ -1,88 +1,110 @@
 const path = require('path');
-const {
-    version,
-    name
-} = require('./package.json');
+const { version, name } = require('./package.json');
 
 const join = (...str) => path.join(__dirname, str.join('/'));
-const joinMap = (...str) => str.map((v) => join(v))
+const joinMap = (...str) => str.map((v) => join(v));
 
 module.exports = {
-    title: name,
-    styles: {
-        StyleGuide: {
-            '@global body': {
-                fontFamily: 'Helvetica'
-            }
-        }
-    }, //设置全局字体
-    sections: [{
-            name: 'Introduction.md',
-            content: join('/docs/Introduction.md')
+  title: name,
+  styles: {
+    StyleGuide: {
+      '@global body': {
+        fontFamily: `Helvetica Neue, PingFang SC, Verdana, Microsoft Yahei, Hiragino Sans GB,
+                Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;`
+      }
+    }
+  }, //设置全局字体
+  sections: [
+    {
+      name: 'Introduction.md',
+      content: join('/docs/Introduction.md')
+    },
+    {
+      name: 'Components',
+      // content: join('/docs/button.md'),
+      // components: function () {
+      //     return joinMap([
+      //         './src/components/ErrorBoundaries/index.js',
+      //         './src/components/Button/index.js'
+      //     ])
+      // }
+      components: './src/components/**/index.js'
+    },
+    {
+      name: '个人思考/my think',
+      content: join('/docs/mythink.md')
+    }
+  ],
+  theme: {
+    baseBackground: '#fdfdfc',
+    link: '#454d5d',
+    linkHover: '#90a7bf',
+    border: '#e0d2de',
+    font: ['Helvetica', 'sans-serif']
+  },
+  webpackConfig: {
+    devtool: 'cleap-source-map',
+    module: {
+      rules: [
+        {
+          test: /(\.js?$)|(\.jsx?$)|(\.md?$)/,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
         },
         {
-            name: 'Components',
-            // content: join('/docs/button.md'),
-            // components: function () {
-            //     return joinMap([
-            //         './src/components/ErrorBoundaries/index.js',
-            //         './src/components/Button/index.js'
-            //     ])
-            // }
-            components: './src/components/**/index.js'
-        }
-    ],
-    theme: {
-        baseBackground: '#fdfdfc',
-        link: '#454d5d',
-        linkHover: '#90a7bf',
-        border: '#e0d2de',
-        font: ['Helvetica', 'sans-serif'],
-    },
-    webpackConfig: {
-        module: {
-            rules: [{
-                    test: /\.jsx?$/,
-                    exclude: /node_modules/,
-                    loader: 'babel-loader',
-                },
-                {
-                    test: /\.css$/,
-                    loader: 'style-loader!css-loader',
-                },
-                {
-                    test: /\.scss$/,
-                    use: [
-                        "style-loader", // creates style nodes from JS strings
-                        "css-loader", // translates CSS into CommonJS
-                        "sass-loader" // compiles Sass to CSS, using Node Sass by default
-                    ]
-                }
-            ],
+          test: /\.css$/,
+          loader: 'style-loader!css-loader'
         },
-        resolve: {
-            extensions: ['.js', '.jsx', '.json', '.scss'],
-            alias: {
-              '@app': join('src')
+        {
+          test: /\.scss$/,
+          use: [
+            'style-loader', // creates style nodes from JS strings
+            'css-loader', // translates CSS into CommonJS
+            'sass-loader' // compiles Sass to CSS, using Node Sass by default
+          ]
+        },
+        {
+          test: /\.(gif|png|jpe?g|svg)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'images/'
+              }
             },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                bypassOnDebug: true
+              }
+            }
+          ]
         }
+      ]
     },
-    require: [
-        'babel-polyfill',
-        // path.join(__dirname, 'path/to/script.js'),
-        // path.join(__dirname, 'path/to/styles.css')
-    ],
-    getExampleFilename(componentPath) {
-        let componentList= componentPath.split('/')
-        // console.log(componentList[componentList.length - 1])
-        let componentName = componentList[componentList.length - 2].toLowerCase()
-        
-        // return componentPath.replace(/\.jsx?$/, '.examples.md')
-        return path.resolve(__dirname, 'docs', componentName + '.md')
+    resolve: {
+      extensions: ['.js', '.jsx', '.json', '.scss'],
+      alias: {
+        '@app': join('src')
+      }
     }
-      // 替换默认的md  file.jsx ===>  默认的readme.md ===> file+.examples.md
+  },
+  require: [
+    'babel-polyfill'
+    // path.join(__dirname, 'path/to/script.js'),
+    // path.join(__dirname, 'path/to/styles.css')
+  ],
+  getExampleFilename(componentPath) {
+    let componentList = componentPath.split('/');
+    // console.log(componentList[componentList.length - 1])
+    let componentName = componentList[componentList.length - 2].toLowerCase();
 
-}
+    // return componentPath.replace(/\.jsx?$/, '.examples.md')
+    return path.resolve(__dirname, 'docs', componentName + '.md');
+  }
+  // 替换默认的md  file.jsx ===>  默认的readme.md ===> file+.examples.md
+};
 
 // ```js { "file": "../mySourceCode.js" }
 // ```

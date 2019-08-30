@@ -1,10 +1,50 @@
 import React from 'react';
-import styled from 'styled-components'
-import is from 'styled-is'
+import styled, { css } from 'styled-components';
+import is, { isNot } from 'styled-is';
+import Group from './group';
 
-const Button = styled.button.attrs({
-    disabled: props => (props.disabled === true ? props.disabled : false)
-})`
+const ButtonFocusZIndex = 111;
+const BtnBaseStyle = css`
+  font-family: inherit;
+  font-size: 1em;
+
+  cursor: pointer;
+
+  appearance: none;
+  border-radius: 6px;
+  padding: calc(0.375em - 1px) 0.75em;
+  line-height: 1.5;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dbdbdb;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  vertical-align: top;
+
+  transition: color, background-color, transform 0.5s;
+  will-change: color, background-color, transform;
+
+  margin-bottom: 0.5em;
+  outline: 0;
+
+  text-decoration: none;
+`;
+
+const noop = () => {};
+
+const Button = styled.button.attrs((props) => ({
+  disabled: props.disabled === true ? props.disabled : false,
+  active: props.disabled === true ? props.active : false,
+  role: 'botton',
+  tabIndex: 0
+}))`
+    & + &{
+        margin-left: 10px;
+    }
+    appearance: none;
     cursor: pointer;
     appearance: none;
     border-radius: 6px;
@@ -49,11 +89,11 @@ const Button = styled.button.attrs({
     ${is('shadow')`
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
     `}
-`
+`;
 
 /**
  * you can write some in here you know?
- * 
- * @component
+ *
+ * @components
  */
-export default Button
+export default Button;

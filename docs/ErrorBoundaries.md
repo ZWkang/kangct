@@ -1,19 +1,16 @@
 ```js
 <ErrorBoundaries>
-    <div>
-        test
-    </div>
+  <div>test</div>
 </ErrorBoundaries>
 ```
 
 ```js
-function Test(){
-    throw new Error('123')
+function Test() {
+  throw new Error('123');
 }
-<ErrorBoundaries
->
-    <div>
-        <Test/>
-    </div>
-</ErrorBoundaries>
+<ErrorBoundaries>
+  <div>
+    <Test />
+  </div>
+</ErrorBoundaries>;
 ```

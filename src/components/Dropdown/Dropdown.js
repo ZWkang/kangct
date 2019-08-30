@@ -5,7 +5,7 @@ import DropdownItem from './DropdownItem';
 import Rect from '../Rect';
 import { UlContainer } from './DropdownWrapper';
 import enhanceWithClickOutside from 'react-click-outside';
-
+//TODO: 修改为focus blur 触发事件
 const Temp = styled.div`
   position: relative;
   text-align: left;
@@ -72,9 +72,12 @@ class Dropdown extends Component {
       title: title
     });
   };
-  handleItemClick = () => {};
+  handleItemClick = (item, e) => {
+    const { onClick } = this.props;
+    onClick && onClick(item, e);
+  };
   render() {
-    const { title } = this.props;
+    const { title, list } = this.props;
     const { dropdownShow } = this.state;
     return (
       <Temp ref={this.dropdown}>
@@ -93,8 +96,11 @@ class Dropdown extends Component {
                   }}
                 >
                   <UlContainer style={{ padding: '0' }}>
-                    {['test', 'xxx'].map((item) => {
-                      return <DropdownItem title={item} />;
+                    {list.map((item, index) => {
+                      const handleItemClick = this.handleItemClick.bind(this, item);
+                      return (
+                        <DropdownItem title={item} onClick={handleItemClick} key={item + index} />
+                      );
                     })}
                   </UlContainer>
                 </div>

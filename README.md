@@ -1,5 +1,6 @@
 # Agamemnon
-> a simple lib with component
+
+> 一个简单的 ui component use react and styled-components
 
 ---
 
@@ -8,3 +9,7 @@
 [![codecov](https://codecov.io/gh/ZWkang/Agamemnon/branch/master/graph/badge.svg?token=2PYU7ivbJz)](https://codecov.io/gh/ZWkang/Agamemnon)
 ![](https://img.shields.io/badge/language-javascript-green.svg)
 ![](https://img.shields.io/badge/license-MIT-000000.svg)
+
+## author
+
+[@zwkang](https://github.com/ZWkang)
