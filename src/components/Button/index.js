@@ -1,8 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-import styled from 'styled-components';
-import is from 'styled-is';
-=======
 import styled, { css } from 'styled-components';
 import is, { isNot } from 'styled-is';
 import Group from './group';
@@ -36,22 +32,14 @@ const BtnBaseStyle = css`
 
   text-decoration: none;
 `;
->>>>>>> fcd4a25d9e6741216d49e9097e176e962250187b
 
 const noop = () => {};
 
 const Button = styled.button.attrs((props) => ({
-<<<<<<< HEAD
-    disabled: props.disabled === true ? props.disabled : false,
-    active: props.disabled === true ? props.active : false,
-    role: 'botton',
-    tabIndex: 0
-=======
   disabled: props.disabled === true ? props.disabled : false,
   active: props.disabled === true ? props.active : false,
   role: 'botton',
   tabIndex: 0
->>>>>>> fcd4a25d9e6741216d49e9097e176e962250187b
 }))`
     & + &{
         margin-left: 10px;
