@@ -18,6 +18,6 @@ error.log
 .idea
 .vscode
 .eslintcache
-.editorconfig
+# .editorconfig
 
 .coverage
