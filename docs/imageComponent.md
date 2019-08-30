@@ -1,23 +1,23 @@
 ```js
-<ImageComponent is32x32 imageUrl={'https://bulma.io/images/placeholders/128x128.png'} />
+<ImageComponent is32x32 imageUrl={'https://zwkang.github.io/Boreads/example/1x1picture.jpeg'} />
 
 <br />
 
-<ImageComponent is64x64 imageUrl={'https://bulma.io/images/placeholders/128x128.png'} />
+<ImageComponent is64x64 imageUrl={'https://zwkang.github.io/Boreads/example/1x1picture.jpeg'} />
 
 <br />
 
-<ImageComponent is128x128 imageUrl={'https://bulma.io/images/placeholders/128x128.png'} />
+<ImageComponent is128x128 imageUrl={'https://zwkang.github.io/Boreads/example/1x1picture.jpeg'} />
 
 <br />
 
-<ImageComponent is256x256 imageUrl={'https://bulma.io/images/placeholders/128x128.png'} />
+<ImageComponent is256x256 imageUrl={'https://zwkang.github.io/Boreads/example/1x1picture.jpeg'} />
 
 ```
 
 ```jsx
 <Heading.H4>半圆容器</Heading.H4>
-<ImageComponent radius is256x256 imageUrl={'https://bulma.io/images/placeholders/128x128.png'} />
+<ImageComponent radius is256x256 imageUrl={'https://zwkang.github.io/Boreads/example/1x1picture.jpeg'} />
 
 
 ```
@@ -34,7 +34,7 @@
     }
   >
     <Heading.H1>
-    is1by3 block
+    is3by1 block
     </Heading.H1>
   </Box>
 </ImageComponent>
@@ -49,7 +49,7 @@
         }
       } >
       <Heading.H1>
-      is1by3 block
+      is3by2 block
       </Heading.H1>
     </Box>
 </ImageComponent>
