@@ -21,3 +21,9 @@ error.log
 # .editorconfig
 
 .coverage
+
+dist
+
+styleguide
+
+.editorconfig
