@@ -3,4 +3,4 @@ import ToolTip from './ToolTip';
 /**
  * @components
  */
-export default ToolTip;
+export { ToolTip as default };

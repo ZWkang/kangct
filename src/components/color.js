@@ -7,9 +7,6 @@ const colorPennel = {
   info: '#d1ecf1',
   light: '#fefefe',
   dark: '#d6d8d9'
-}
+};
 
-
-export default {
-  colorPennel
-}
+export default colorPennel;
