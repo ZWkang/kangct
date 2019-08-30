@@ -1,3 +1,3 @@
-import Protal from './Protal'
+import Protal from './Protal';
 
-export { Protal as default }
+export { Protal as default };

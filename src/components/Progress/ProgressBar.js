@@ -1,22 +1,20 @@
-import React, { Component } from 'react'
-import styled, {keyframes} from 'styled-components'
-import is from 'styled-is'
+import React, { Component } from 'react';
+import styled, { keyframes } from 'styled-components';
+import is from 'styled-is';
 
 const sizeMap = {
   large: 24,
   medium: 20,
   default: 16,
   small: 12
-}
+};
 
 const colors = {
   danger: '#FF3860',
   success: '#23d160',
   normal: '#3273dc',
   warning: '#ffdd57'
-}
-
-
+};
 
 const defaultProgressBar = `
   display: block;
@@ -29,7 +27,7 @@ const defaultProgressBar = `
   padding: 0;
   width: 100%;
   background-color:#e6e6e6;
-`
+`;
 
 const moveIndeterminate = keyframes`
   from{
@@ -40,16 +38,17 @@ const moveIndeterminate = keyframes`
     background-position: -200% 0;
   }
   
-`
+`;
 
 const ProgressBar = styled.progress`
   ${defaultProgressBar}
   ${is('size')`
-    height: ${props => sizeMap[props.size]}px;
+    height: ${(props) => sizeMap[props.size]}px;
   `}
   &:indeterminate {
     ${is('colortype')`
-      background-image: linear-gradient(to right, ${props => colors[props.colortype] || colors['normal']} 30%,#dbdbdb 30%);
+      background-image: linear-gradient(to right, ${(props) =>
+        colors[props.colortype] || colors['normal']} 30%,#dbdbdb 30%);
     `}
     animation: ${moveIndeterminate} 1.5s linear infinite;
     animation-timing-function: linear;
@@ -71,6 +70,6 @@ const ProgressBar = styled.progress`
   &::-webkit-progress-value{
     background-color: hsl(0, 0%, 29%);
   }
-`
+`;
 
-export default ProgressBar
+export default ProgressBar;

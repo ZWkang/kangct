@@ -46,36 +46,65 @@ const Button = styled.button.attrs((props) => ({
     }
     appearance: none;
     cursor: pointer;
-    appearance: none;
     border-radius: 6px;
-    padding: calc(.375em - 1px) .75em;
+    padding: calc(0.375em - 1px) 0.75em;
+
     line-height: 1.5;
-    border: 1px solid #000;
-    /* font-size: 16px; */
+    border-width: 1px solid #dbdbdb;
+
     display: inline-flex;
     justify-content: center;
     align-items: center;
+
     vertical-align: top;
-    transition: color,background-color,transform .5s;
-    will-change: color,background-color,transform;
-    ${is('full')`
-        width: 100%;
-    `}
+
+    margin-bottom: 0.5em;
+
+    text-decoration: none;
+
     font-size: 1em;
-    margin-bottom: .5em;
-    outline: 0;
-    ${is('hover')`
-        :hover{
+
+    :not(:disabled):hover{
+        opacity: 0.9;
+    }
+
+    :not(:disabled):hover,
+    :not(:disabled):active{
+        /* box-shadow: 0 0 0 0.125em rgba(50,115,220,.2); */
+        border-color: #4a4a4a;
+        color: #363636;
+    }
+
+    /* TODO: 颜色反相 */
+    /* ${is('hover')`
+        :not(:disabled):hover{
             background: #000;
-            color: #fff;
+            // color: #fff;
             transform: matrix(1,0,0,1,0, -1);
         }
-    `}
+    `} */
+
+    :not(:disabled):active {
+        border-color: #4a4a4a;
+        opacity: 1;
+    }
+
+    :not(:active):focus {
+        border-color: #3273dc;
+        color: #363636;
+        position: relative;
+        box-shadow: 0 0 0 0.125em rgba(50,115,220,.2);
+        /* outline: 2px auto rgba(19,124,189,.6);
+        outline-offset: 2px; */
+        /* z-index: ${ButtonFocusZIndex}; */
+        position:relative;
+    }
+
     /* user-select:none; */
     ${is('disabled')`
         cursor: not-allowed;
         background: #ccc;
-        // pointer-events: none;
+        opacity: 0.8;
     `}
     ${is('small')`
         font-size: 0.75em;
@@ -89,11 +118,14 @@ const Button = styled.button.attrs((props) => ({
     ${is('shadow')`
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
     `}
+    ${is('full')`
+        width: 100%;
+    `}
 `;
-
+Button.Group = Group;
 /**
  * you can write some in here you know?
  *
  * @components
  */
-export default Button;
+export { Button as default };

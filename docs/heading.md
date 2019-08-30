@@ -1,3 +1,5 @@
+> almost seem like sofish/typo.css repo
+
 ```js
 <Heading.P>提供2个排版实例，第一个中文实例来自于来自于<cite className="typo-unique">张燕婴</cite>的《论语》，由于古文排版涉及到的元素比较多，所以采用《论语》中《学而》的第一篇作为排版实例介绍；第2个来自到经典的
   Lorem Ipsum，并加入了一些代码和列表等比较具有代表性的排版元素。</Heading.P>
