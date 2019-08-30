@@ -1,0 +1,20 @@
+.notifi-enter {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.notifi-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.notifi-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+.notifi-exit {
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 300ms, transform 300ms;
+}
