@@ -12,17 +12,23 @@ class Protal extends Component {
   };
   constructor(props) {
     super(props);
+  }
+  componentWillMount() {
     this.settleElement();
+    this.appendChildElemen();
   }
   componentDidMount() {
-    // this.appendChildElemen()
-    this.appendChildElemen();
+    this.settleElement();
+    if (this.parentNode !== null) {
+      this.forceUpdate();
+    }
   }
   appendChildElemen = () => {
     const { target } = this.props;
     const targetElement = document.querySelector(target);
     // debugger
     if (targetElement === null) {
+      this.parentNode = document.createElement('div');
       document.body.appendChild(this.parentNode);
     } else {
       return;
@@ -39,23 +45,8 @@ class Protal extends Component {
     }
   }
   componentWillUnmount() {
-    //     consol
-    //   if(this.parentNode !== null && this.props.target === 'body' ) {
-    //     this.parentNode.parentNode.removeChild(React.findDOMNode(this.childRef))
-    //   }
     this.parentNode = null;
   }
-  createElementInsert = () => {
-    // const { target, position = 'afterend' } = this.props
-    // const el = document.createElement('div')
-    // let queryElement = target
-    // if(typeof target === 'string') {
-    //     queryElement = document.querySelector(target)
-    //     invariant(queryElement, 'to Element unfound' + queryElement)
-    // }
-    // queryElement.insertAdjacentElement(position, el)
-    // return el
-  };
   render() {
     const { children } = this.props;
     return createPortal(children, this.parentNode);
