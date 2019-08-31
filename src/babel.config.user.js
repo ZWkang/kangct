@@ -1,7 +1,4 @@
-const { declare } = require('@babel/helper-plugin-utils');
-
-module.exports = declare((api) => {
-  api.assertVersion('^6.0.0');
+module.exports = (_) => {
   return {
     plugins: [
       [
@@ -14,4 +11,4 @@ module.exports = declare((api) => {
       ]
     ]
   };
-});
+};
