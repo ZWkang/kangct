@@ -13,3 +13,25 @@
 ## author
 
 [@zwkang](https://github.com/ZWkang)
+
+## usage
+
+```js
+// babel ^6.0.0
+presets: [require('kangct/babel.config.user.js')];
+// babel-plugin-import for kangct preset..
+```
+
+```
+npm install kangct --save-dev
+```
+
+## docs
+
+[docs link](https://zwkang.github.io/kangct)
+
+---
+
+## LICENSE
+
+MIT
