@@ -1,6 +1,6 @@
 {
   "name": "kangct",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "title": "kangct",
   "description": "一个简单的ui component use react and styled-components",
   "keywords": [
@@ -22,7 +22,6 @@
     "build:doc": "npx styleguidist build",
     "deploy:doc": "./publish-doc.sh"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ZWkang/kangct.git"
