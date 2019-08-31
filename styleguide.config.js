@@ -6,6 +6,7 @@ const joinMap = (...str) => str.map((v) => join(v));
 
 module.exports = {
   title: name,
+  version: version,
   styles: {
     StyleGuide: {
       '@global body': {
@@ -16,11 +17,11 @@ module.exports = {
   }, //设置全局字体
   sections: [
     {
-      name: 'Introduction.md',
+      name: '简介(intro)',
       content: join('/docs/Introduction.md')
     },
     {
-      name: 'Components',
+      name: '组件(Components)',
       // content: join('/docs/button.md'),
       // components: function () {
       //     return joinMap([
@@ -31,16 +32,17 @@ module.exports = {
       components: './src/components/!(util)**/index.js'
     },
     {
-      name: '个人思考/my think',
+      name: '最后(think)',
       content: join('/docs/mythink.md')
     }
   ],
   theme: {
-    baseBackground: '#fdfdfc',
-    link: '#454d5d',
-    linkHover: '#90a7bf',
-    border: '#e0d2de',
-    font: ['Helvetica', 'sans-serif']
+    color: {
+      baseBackground: '#fdfdfc',
+      link: '#00000c',
+      linkHover: '#90a7bf',
+      border: '#454d5d'
+    }
   },
   webpackConfig: {
     devtool: 'cleap-source-map',
