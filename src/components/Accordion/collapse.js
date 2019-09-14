@@ -1,6 +1,9 @@
-import react from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import is from 'styled-is';
+
+// https://github.com/facebook/prop-types/issues/200
+// forward ref should be notice
 
 const Collapse = styled.section`
   text-align: left;
