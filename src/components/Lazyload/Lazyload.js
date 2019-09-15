@@ -10,7 +10,7 @@ const Lazyload = (props) => {
       ...props,
       children: onScreen ? props.children : null
     };
-    return <ImageComponent ref={lazyLoadRef} {...childProps} type={type}></ImageComponent>;
+    return <ImageComponent ref={lazyLoadRef} {...childProps} type={type} />;
   }
   return (
     <ImageComponent
@@ -18,7 +18,7 @@ const Lazyload = (props) => {
       {...props}
       type={type}
       src={onScreen ? imageUrl : undefined}
-    ></ImageComponent>
+    />
   );
 };
 
