@@ -1,0 +1,1 @@
+export { Lazyload } from './Lazyload';
