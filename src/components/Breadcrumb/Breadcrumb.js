@@ -60,7 +60,7 @@ Breadcrumb.propTypes = {
     PropTypes.shape({
       // link: PropTypes.oneOf(PropTypes.string, PropTypes.bool),
       title: PropTypes.string.isRequired,
-      render: PropTypes.node
+      render: PropTypes.Function
     })
   )
 };
