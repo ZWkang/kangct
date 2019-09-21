@@ -45,7 +45,7 @@ const Loading = ({ loading, speed = 3000, title, author }) => {
 
   useEffect(() => {
     setLoading(loading);
-  }, loading);
+  }, [loading]);
 
   if (!isloading) return null;
 
