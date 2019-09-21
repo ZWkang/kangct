@@ -1,1 +1,3 @@
-export { Lazyload } from './Lazyload';
+import Lazyload from './Lazyload';
+
+export { Lazyload as default } 
