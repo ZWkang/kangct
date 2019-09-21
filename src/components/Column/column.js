@@ -176,6 +176,7 @@ const Column = styled.div`
 
 Column.Row = styled.div`
   display: block;
+  margin: 0 -0.75rem;
 `;
 /**
  * @components
