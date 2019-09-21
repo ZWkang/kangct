@@ -1,10 +1,18 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
 import is, { isNot } from 'styled-is';
 import Animated from '../Animate/help';
 import DialogContent from './DialogCntent';
 import DialogTitle from './DialogTitle';
 import FTR from 'focus-trap-react';
+
+// bootstrap solution
+const LockBody = createGlobalStyle`
+  .modal-lock {
+    overflow: hidden;
+    /* position: fixed; */
+  }
+`;
 
 const enter = keyframes`
   from {
@@ -97,16 +105,22 @@ class DialogAnimate extends React.Component {
       this.leave();
     }
   }
-
   enter() {
-    this.setState({
-      isShow: true,
-      animationType: 'enter'
-    });
+    this.setState(
+      {
+        isShow: true,
+        animationType: 'enter'
+      },
+      () => {
+        document.body.classList.add('modal-lock');
+      }
+    );
   }
 
   leave() {
-    this.setState({ animationType: 'leave' });
+    this.setState({ animationType: 'leave' }, () => {
+      document.body.classList.remove('modal-lock');
+    });
   }
   handleEscCode = (event) => {
     const { onClose } = this.props;
@@ -146,6 +160,7 @@ class DialogAnimate extends React.Component {
           duration={duration}
         >
           <div tabIndex="0" />
+          <LockBody />
           <AnimateMask onClick={onClose} />
           {children}
           <div tabIndex="0" />
