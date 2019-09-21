@@ -97,18 +97,28 @@ const handleRadius = (radius) => {
   };
 };
 
-const ImageComponent = ({ radius, imageUrl, type = 'img', children, ...rest }) => {
-  radius = handleRadius(radius);
-  const defaultInner = <ImageItem {...radius} src={imageUrl} {...rest} />;
-  const normalInner = (
-    <NormalItem {...radius} {...rest}>
-      {children}
-    </NormalItem>
-  );
-  if (type !== 'img') {
-    return <ImageContainer {...rest}>{normalInner}</ImageContainer>;
+const ImageComponent = React.forwardRef(
+  ({ radius, imageUrl, type = 'img', children, ...rest }, ref) => {
+    radius = handleRadius(radius);
+    const defaultInner = <ImageItem {...radius} src={imageUrl} {...rest} />;
+    const normalInner = (
+      <NormalItem {...radius} {...rest}>
+        {children}
+      </NormalItem>
+    );
+    if (type !== 'img') {
+      return (
+        <ImageContainer {...rest} ref={ref}>
+          {normalInner}
+        </ImageContainer>
+      );
+    }
+    return (
+      <ImageContainer {...rest} ref={ref}>
+        {defaultInner}
+      </ImageContainer>
+    );
   }
-  return <ImageContainer {...rest}>{defaultInner}</ImageContainer>;
-};
+);
 
 export default ImageComponent;
