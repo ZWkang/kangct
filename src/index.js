@@ -64,7 +64,7 @@ export { default as Pannel } from './components/Pannel';
 export { default as Progress } from './components/Progress';
 export { default as Protal } from './components/Protal';
 export { default as Rect } from './components/Rect';
-export { default as ScrollTo } from './components/ScrollTo';
+export { default as ScrollTo } from './components/scrollTo';
 export { default as Tab } from './components/Tab';
 export { default as Table } from './components/Table';
 export { default as Toggle } from './components/Toggle';
