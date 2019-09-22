@@ -68,6 +68,7 @@ const Card = CardContainer;
 // Card.Container = CardContainer;
 Card.Body = CardBody;
 Card.Link = CardLink;
+Card.Link.displayName = 'CardLink'
 Card.Header = CardHeader;
 Card.Footer = CardFooter;
 // export Body

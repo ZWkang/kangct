@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import DropdownItem from './DropdownItem';
 import Rect from '../Rect';
+import Protal from '../Protal';
 import { UlContainer } from './DropdownWrapper';
 import enhanceWithClickOutside from 'react-click-outside';
 //TODO: 修改为focus blur 触发事件
@@ -28,6 +29,11 @@ class Dropdown extends Component {
     this.state = {
       dropdownShow: false
     };
+  }
+  componentWillReceiveProps(props) {
+    if (this.props.trigger !== props.trigger) {
+      this.forceUpdate();
+    }
   }
   handleTitleClick = () => {
     const { dropdownShow } = this.state;
@@ -76,6 +82,15 @@ class Dropdown extends Component {
     const { onClick } = this.props;
     onClick && onClick(item, e);
   };
+  componentWillUnmount() {
+    let { trigger } = this.props;
+    if (typeof trigger === 'string') {
+      trigger = [trigger];
+    }
+    trigger.map((triggerItem) => {
+      this.dropdown.current.removeEventListener(triggerItem, this.triggerEvent, false);
+    });
+  }
   render() {
     const { title, list } = this.props;
     const { dropdownShow } = this.state;

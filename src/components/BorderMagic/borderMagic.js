@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { transfromData } from '../util/index.js';
-import warning from 'warning';
+// import warning from 'warning';
+import invariant from 'tiny-invariant'
 
 const BASIC_SIZE = 10;
 
@@ -86,7 +87,7 @@ class BorderMagicCom extends React.Component {
   }
   async componentDidMount() {
     let { imageUrl, matrixArray } = this.props;
-    warning(imageUrl, '确认是否漏传imageUrl');
+    invariant(imageUrl, '确认是否漏传imageUrl');
     matrixArray = matrixArray || (await transfromData({ imageUrl }));
     this.setState({
       matrixArray

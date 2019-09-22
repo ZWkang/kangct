@@ -2,10 +2,33 @@
 
 ```jsx
 
-<Button small>small size</Button>
-<Button>normal size</Button>
-<Button medium>medium size</Button>
-<Button big>biggest size</Button>
+// import Intl from '../src/components/i18n/Intl.js'
+const Intl = require('../src/components/Intl/index.js')
+console.log(Intl)
+const data = {
+  local: 'zh-cn',
+  locals: {
+    'zh-cn': {
+      small: '小尺寸',
+      normal: '普通尺寸',
+      medium: '中等尺寸',
+      big: '大尺寸'
+    },
+    'en-us': {
+      small: 'small size',
+      normal: 'normal size',
+      medium: 'medium size',
+      big: 'big size'
+    }
+  }
+}
+
+const i18n = new Intl.default(data);
+
+;['small', 'normal', 'medium', 'big'].map((_) => {
+  const props = {[_]: true}
+  return <Button {...props} >{i18n.d[_]}</Button>
+})
 ```
 
 ### shadow

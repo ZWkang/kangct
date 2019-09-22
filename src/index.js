@@ -69,7 +69,12 @@ export { default as Tab } from './components/Tab';
 export { default as Table } from './components/Table';
 export { default as Toggle } from './components/Toggle';
 export { default as ToolTips } from './components/ToolTips';
-export * from './components/util';
+
+export { default as Lozyload } from './components/Lazyload';
+
+export { default as Intl } from './components/Intl';
+
+// export * from './components/util';
 
 // export * from './components/Base';
 // export * from './components/Page';

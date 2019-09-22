@@ -16,6 +16,7 @@ const generatorComponent = ({ name, duration, keyframesFuntion, delay }) => {
   return Wrapper;
 };
 
+// 如果omit 了onAnimationEnd的话，子组件就无法接受外部的onAnimationEnd了。bad design
 class Animate extends Component {
   constructor(props) {
     super(props);
@@ -34,14 +35,20 @@ class Animate extends Component {
       'name',
       'duration',
       'keyframesFuntion',
-      'delay'
+      'delay',
+      'onAnimationEnd'
     ]);
     const { RenderComponent: Wrapper } = this;
-    const Children = React.cloneElement(this.props.children, {
-      ...omitProps
+    const Children = React.Children.map(this.props.children, (_) => {
+      if (React.isValidElement(_)) {
+        return React.cloneElement(_, {
+          ...omitProps
+        });
+      }
+      return _;
     });
 
-    return <Wrapper>{Children}</Wrapper>;
+    return <Wrapper onAnimationEnd={this.props.onAnimationEnd}>{Children}</Wrapper>;
   }
 }
 
@@ -54,7 +61,8 @@ Animate.propTypes = {
 Animate.defaultProps = {
   keyframesFuntion: void 666,
   name: '',
-  duration: 0
+  duration: 0,
+  onAnimationEnd: () => {}
 };
 /**
  * @components

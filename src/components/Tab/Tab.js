@@ -4,9 +4,6 @@ import styled from 'styled-components';
 import TabsItem from './TabsItem';
 import TabBody from './TabBody';
 import Flex from '../Flex';
-import keydown, { Keys } from 'react-keydown';
-
-const { ENTER, TAB } = Keys;
 
 const TabsContainer = styled.div``;
 const TabsWrapper = styled.ul`
@@ -101,7 +98,7 @@ class Tab extends Component {
   };
 
   handleFocus = () => {
-    debugger;
+    // debugger;
     if (this.state.focused) return;
     // console.log()
     // debugger;
