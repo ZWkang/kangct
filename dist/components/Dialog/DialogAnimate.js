@@ -6,14 +6,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  from {\n    opacity: 0;\n  }\n'], ['\n  from {\n    opacity: 0;\n  }\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  to {\n    opacity: 0;\n  }\n'], ['\n  to {\n    opacity: 0;\n  }\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.1);\n  z-index: 99;\n'], ['\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.1);\n  z-index: 99;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  background: white;\n  position: relative;\n  z-index: 101;\n  background: rgba(255, 255, 255, 1);\n  display: flex;\n  flex-direction: column;\n  border: 1px solid #ccc;\n  border-top-left-radius: 6px;\n  border-top-right-radius: 6px;\n'], ['\n  background: white;\n  position: relative;\n  z-index: 101;\n  background: rgba(255, 255, 255, 1);\n  display: flex;\n  flex-direction: column;\n  border: 1px solid #ccc;\n  border-top-left-radius: 6px;\n  border-top-right-radius: 6px;\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 100;\n  ', '\n\n  /* \u5B50\u5143\u7D20\u5B9A\u4F4D\u76F8\u5173 */\n  \n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n\n  /**/\n  ', '\n\n  ', '\n'], ['\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 100;\n  ', '\n\n  /* \u5B50\u5143\u7D20\u5B9A\u4F4D\u76F8\u5173 */\n  \n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n\n  /**/\n  ', '\n\n  ', '\n']),
-    _templateObject6 = _taggedTemplateLiteral(['\n    animation: 500ms ', ' both ease-in;\n  '], ['\n    animation: 500ms ', ' both ease-in;\n  ']),
-    _templateObject7 = _taggedTemplateLiteral(['\n    display: none;\n  '], ['\n    display: none;\n  ']),
-    _templateObject8 = _taggedTemplateLiteral(['\n    animation-duration: ', 'ms;\n  '], ['\n    animation-duration: ', 'ms;\n  ']);
+var _templateObject = _taggedTemplateLiteral(['\n  .modal-lock {\n    overflow: hidden;\n    /* position: fixed; */\n  }\n'], ['\n  .modal-lock {\n    overflow: hidden;\n    /* position: fixed; */\n  }\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  from {\n    opacity: 0;\n  }\n'], ['\n  from {\n    opacity: 0;\n  }\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  to {\n    opacity: 0;\n  }\n'], ['\n  to {\n    opacity: 0;\n  }\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.1);\n  z-index: 99;\n'], ['\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.1);\n  z-index: 99;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  background: white;\n  position: relative;\n  z-index: 101;\n  background: rgba(255, 255, 255, 1);\n  display: flex;\n  flex-direction: column;\n  border: 1px solid #ccc;\n  border-top-left-radius: 6px;\n  border-top-right-radius: 6px;\n'], ['\n  background: white;\n  position: relative;\n  z-index: 101;\n  background: rgba(255, 255, 255, 1);\n  display: flex;\n  flex-direction: column;\n  border: 1px solid #ccc;\n  border-top-left-radius: 6px;\n  border-top-right-radius: 6px;\n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 100;\n  ', '\n\n  /* \u5B50\u5143\u7D20\u5B9A\u4F4D\u76F8\u5173 */\n  \n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n\n  /**/\n  ', '\n\n  ', '\n'], ['\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 100;\n  ', '\n\n  /* \u5B50\u5143\u7D20\u5B9A\u4F4D\u76F8\u5173 */\n  \n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n\n  /**/\n  ', '\n\n  ', '\n']),
+    _templateObject7 = _taggedTemplateLiteral(['\n    animation: 500ms ', ' both ease-in;\n  '], ['\n    animation: 500ms ', ' both ease-in;\n  ']),
+    _templateObject8 = _taggedTemplateLiteral(['\n    display: none;\n  '], ['\n    display: none;\n  ']),
+    _templateObject9 = _taggedTemplateLiteral(['\n    animation-duration: ', 'ms;\n  '], ['\n    animation-duration: ', 'ms;\n  ']);
 
 var _react = require('react');
 
@@ -53,13 +54,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var enter = (0, _styledComponents.keyframes)(_templateObject);
+// bootstrap solution
+var LockBody = (0, _styledComponents.createGlobalStyle)(_templateObject);
 
-var end = (0, _styledComponents.keyframes)(_templateObject2);
+var enter = (0, _styledComponents.keyframes)(_templateObject2);
 
-var AnimateMask = _styledComponents2.default.div(_templateObject3);
-var DialogWrapper = _styledComponents2.default.div(_templateObject4);
-var Animate = _styledComponents2.default.div(_templateObject5, (0, _styledIs2.default)('animationType')(_templateObject6, function (props) {
+var end = (0, _styledComponents.keyframes)(_templateObject3);
+
+var AnimateMask = _styledComponents2.default.div(_templateObject4);
+var DialogWrapper = _styledComponents2.default.div(_templateObject5);
+var Animate = _styledComponents2.default.div(_templateObject6, (0, _styledIs2.default)('animationType')(_templateObject7, function (props) {
   switch (props.animationType) {
     case 'enter':
       return enter;
@@ -68,7 +72,7 @@ var Animate = _styledComponents2.default.div(_templateObject5, (0, _styledIs2.de
     default:
       return end;
   }
-}), (0, _styledIs.isNot)('display')(_templateObject7), (0, _styledIs2.default)('duration')(_templateObject8, function (props) {
+}), (0, _styledIs.isNot)('display')(_templateObject8), (0, _styledIs2.default)('duration')(_templateObject9, function (props) {
   return props.duration || 0;
 }));
 
@@ -139,12 +143,16 @@ var DialogAnimate = function (_React$Component) {
       this.setState({
         isShow: true,
         animationType: 'enter'
+      }, function () {
+        document.body.classList.add('modal-lock');
       });
     }
   }, {
     key: 'leave',
     value: function leave() {
-      this.setState({ animationType: 'leave' });
+      this.setState({ animationType: 'leave' }, function () {
+        document.body.classList.remove('modal-lock');
+      });
     }
   }, {
     key: 'render',
@@ -176,6 +184,7 @@ var DialogAnimate = function (_React$Component) {
             duration: duration
           },
           _react2.default.createElement('div', { tabIndex: '0' }),
+          _react2.default.createElement(LockBody, null),
           _react2.default.createElement(AnimateMask, { onClick: onClose }),
           children,
           _react2.default.createElement('div', { tabIndex: '0' })

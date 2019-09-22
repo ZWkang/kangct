@@ -129,7 +129,7 @@ var Alert = function (_Component) {
     };
 
     _this.state = {
-      show: true
+      show: props.show
     };
     return _this;
   }

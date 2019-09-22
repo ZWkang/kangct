@@ -28,6 +28,10 @@ var _Rect = require('../Rect');
 
 var _Rect2 = _interopRequireDefault(_Rect);
 
+var _Protal = require('../Protal');
+
+var _Protal2 = _interopRequireDefault(_Protal);
+
 var _DropdownWrapper = require('./DropdownWrapper');
 
 var _reactClickOutside = require('react-click-outside');
@@ -132,14 +136,35 @@ var Dropdown = function (_Component) {
   }
 
   _createClass(Dropdown, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(props) {
+      if (this.props.trigger !== props.trigger) {
+        this.forceUpdate();
+      }
+    }
+  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.registerEvents();
     }
   }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      var _this2 = this;
+
+      var trigger = this.props.trigger;
+
+      if (typeof trigger === 'string') {
+        trigger = [trigger];
+      }
+      trigger.map(function (triggerItem) {
+        _this2.dropdown.current.removeEventListener(triggerItem, _this2.triggerEvent, false);
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var _props = this.props,
           title = _props.title,
@@ -151,7 +176,7 @@ var Dropdown = function (_Component) {
         { ref: this.dropdown },
         this.renderTitle(),
         _react2.default.createElement(
-          Protal,
+          _Protal2.default,
           null,
           _react2.default.createElement(
             _Rect2.default,
@@ -175,7 +200,7 @@ var Dropdown = function (_Component) {
                   _DropdownWrapper.UlContainer,
                   { style: { padding: '0' } },
                   list.map(function (item, index) {
-                    var handleItemClick = _this2.handleItemClick.bind(_this2, item);
+                    var handleItemClick = _this3.handleItemClick.bind(_this3, item);
                     return _react2.default.createElement(_DropdownItem2.default, { title: item, onClick: handleItemClick, key: item + index });
                   })
                 )

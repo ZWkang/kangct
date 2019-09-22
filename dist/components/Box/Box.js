@@ -31,4 +31,6 @@ var Box = (0, _styledComponents2.default)(BoxDefaultCssString)(_templateObject3,
   return props.customStyle;
 }));
 
+Box.displayName = 'Box';
+
 exports.default = Box;

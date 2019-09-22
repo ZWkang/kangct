@@ -52,6 +52,8 @@ var generatorComponent = function generatorComponent(_ref) {
   return Wrapper;
 };
 
+// 如果omit 了onAnimationEnd的话，子组件就无法接受外部的onAnimationEnd了。bad design
+
 var Animate = function (_Component) {
   _inherits(Animate, _Component);
 
@@ -73,14 +75,19 @@ var Animate = function (_Component) {
     key: 'render',
     value: function render() {
       var childProps = Object.assign({}, this.props);
-      var omitProps = (0, _index.Object_omit)(childProps, ['funcname', 'children', 'name', 'duration', 'keyframesFuntion', 'delay']);
+      var omitProps = (0, _index.Object_omit)(childProps, ['funcname', 'children', 'name', 'duration', 'keyframesFuntion', 'delay', 'onAnimationEnd']);
       var Wrapper = this.RenderComponent;
 
-      var Children = _react2.default.cloneElement(this.props.children, _extends({}, omitProps));
+      var Children = _react2.default.Children.map(this.props.children, function (_) {
+        if (_react2.default.isValidElement(_)) {
+          return _react2.default.cloneElement(_, _extends({}, omitProps));
+        }
+        return _;
+      });
 
       return _react2.default.createElement(
         Wrapper,
-        null,
+        { onAnimationEnd: this.props.onAnimationEnd },
         Children
       );
     }
@@ -98,7 +105,8 @@ Animate.propTypes = {
 Animate.defaultProps = {
   keyframesFuntion: void 666,
   name: '',
-  duration: 0
+  duration: 0,
+  onAnimationEnd: function onAnimationEnd() {}
 };
 /**
  * @components

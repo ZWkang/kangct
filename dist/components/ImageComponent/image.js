@@ -109,7 +109,7 @@ var handleRadius = function handleRadius(radius) {
   };
 };
 
-var ImageComponent = function ImageComponent(_ref6) {
+var ImageComponent = _react2.default.forwardRef(function (_ref6, ref) {
   var radius = _ref6.radius,
       imageUrl = _ref6.imageUrl,
       _ref6$type = _ref6.type,
@@ -127,15 +127,15 @@ var ImageComponent = function ImageComponent(_ref6) {
   if (type !== 'img') {
     return _react2.default.createElement(
       ImageContainer,
-      rest,
+      _extends({}, rest, { ref: ref }),
       normalInner
     );
   }
   return _react2.default.createElement(
     ImageContainer,
-    rest,
+    _extends({}, rest, { ref: ref }),
     defaultInner
   );
-};
+});
 
 exports.default = ImageComponent;

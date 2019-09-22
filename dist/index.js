@@ -469,18 +469,22 @@ Object.defineProperty(exports, 'ToolTips', {
   }
 });
 
-var _util = require('./components/util');
+var _Lazyload = require('./components/Lazyload');
 
-Object.keys(_util).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _util[key];
-    }
-  });
+Object.defineProperty(exports, 'Lozyload', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_Lazyload).default;
+  }
 });
 
-// export * from './components/Base';
-// export * from './components/Page';
+var _Intl = require('./components/Intl');
+
+Object.defineProperty(exports, 'Intl', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_Intl).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

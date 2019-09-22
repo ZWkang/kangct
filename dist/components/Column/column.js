@@ -11,7 +11,7 @@ var _templateObject = _taggedTemplateLiteral(['\n    ', '\n  '], ['\n    ', '\n 
     _templateObject3 = _taggedTemplateLiteral(['\n  position: relative;\n  box-sizing: border-box;\n  display: inline-block;\n  /* flex-basis: 0;\n  flex-grow: 1;\n  flex-shrink: 1;\n  padding: .75rem; */\n  min-height: 1px;\n  padding-top: .75rem;\n  padding-bottom: .75rem;\n  float: left;\n  \n  &:after{\n    clear: both;\n    content: " ";\n    display: table;\n  }\n  \n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  \n'], ['\n  position: relative;\n  box-sizing: border-box;\n  display: inline-block;\n  /* flex-basis: 0;\n  flex-grow: 1;\n  flex-shrink: 1;\n  padding: .75rem; */\n  min-height: 1px;\n  padding-top: .75rem;\n  padding-bottom: .75rem;\n  float: left;\n  \n  &:after{\n    clear: both;\n    content: " ";\n    display: table;\n  }\n  \n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  \n']),
     _templateObject4 = _taggedTemplateLiteral(['\n    padding-left: ', '\n    padding-right: ', '\n  '], ['\n    padding-left: ', '\n    padding-right: ', '\n  ']),
     _templateObject5 = _taggedTemplateLiteral(['\n    border: 1px solid #ddd;\n  '], ['\n    border: 1px solid #ddd;\n  ']),
-    _templateObject6 = _taggedTemplateLiteral(['\n  display: block;\n'], ['\n  display: block;\n']);
+    _templateObject6 = _taggedTemplateLiteral(['\n  display: block;\n  margin: 0 -0.75rem;\n'], ['\n  display: block;\n  margin: 0 -0.75rem;\n']);
 
 var _react = require('react');
 

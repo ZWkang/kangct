@@ -24,9 +24,9 @@ var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
 var _index = require('../util/index.js');
 
-var _warning = require('warning');
+var _tinyInvariant = require('tiny-invariant');
 
-var _warning2 = _interopRequireDefault(_warning);
+var _tinyInvariant2 = _interopRequireDefault(_tinyInvariant);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37,6 +37,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+// import warning from 'warning';
+
 
 var BASIC_SIZE = 10;
 
@@ -127,7 +129,7 @@ var BorderMagicCom = function (_React$Component) {
           imageUrl = _props.imageUrl,
           matrixArray = _props.matrixArray;
 
-      (0, _warning2.default)(imageUrl, '确认是否漏传imageUrl');
+      (0, _tinyInvariant2.default)(imageUrl, '确认是否漏传imageUrl');
       matrixArray = matrixArray || (await (0, _index.transfromData)({ imageUrl: imageUrl }));
       this.setState({
         matrixArray: matrixArray

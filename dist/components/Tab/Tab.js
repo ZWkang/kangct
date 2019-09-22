@@ -33,10 +33,6 @@ var _Flex = require('../Flex');
 
 var _Flex2 = _interopRequireDefault(_Flex);
 
-var _reactKeydown = require('react-keydown');
-
-var _reactKeydown2 = _interopRequireDefault(_reactKeydown);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -48,10 +44,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var ENTER = _reactKeydown.Keys.ENTER,
-    TAB = _reactKeydown.Keys.TAB;
-
 
 var TabsContainer = _styledComponents2.default.div(_templateObject);
 var TabsWrapper = _styledComponents2.default.ul(_templateObject2);
@@ -155,7 +147,7 @@ var Tab = function (_Component) {
     };
 
     _this.handleFocus = function () {
-      debugger;
+      // debugger;
       if (_this.state.focused) return;
       // console.log()
       // debugger;

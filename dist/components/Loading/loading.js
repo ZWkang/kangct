@@ -46,7 +46,7 @@ var Loading = function Loading(_ref) {
 
   (0, _react.useEffect)(function () {
     setLoading(loading);
-  }, loading);
+  }, [loading]);
 
   if (!isloading) return null;
 

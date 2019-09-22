@@ -126,7 +126,7 @@ Breadcrumb.propTypes = {
   crumbs: _propTypes2.default.arrayOf(_propTypes2.default.shape({
     // link: PropTypes.oneOf(PropTypes.string, PropTypes.bool),
     title: _propTypes2.default.string.isRequired,
-    render: _propTypes2.default.node
+    render: _propTypes2.default.Function
   }))
 };
 Breadcrumb.defaultProps = {

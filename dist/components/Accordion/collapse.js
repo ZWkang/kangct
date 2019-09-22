@@ -29,6 +29,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
+// https://github.com/facebook/prop-types/issues/200
+// forward ref should be notice
+
 var Collapse = _styledComponents2.default.section(_templateObject);
 
 Collapse.Item = _styledComponents2.default.div(_templateObject2, (0, _styledIs2.default)('itemShadow')(_templateObject3));
