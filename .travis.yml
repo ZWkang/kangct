@@ -3,17 +3,17 @@ sudo: false
 language: node_js
 
 node_js:
-  - 6
+  - 8
 
 install:
   - npm install -g codecov
   - npm install
-  
+
 script:
   - npm run test && codecov
 cache:
   directories:
     - node_modules
-  
+
 before_install:
   - echo registry = https://registry.npmjs.org/ > .npmrc
