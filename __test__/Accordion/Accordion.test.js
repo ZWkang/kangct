@@ -1,9 +1,26 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import Accordion, { Collapse } from '@app/Accordion/index.js';
+import { ComponentRenderWithoutError, AutoMath} from '../testHelper'
 import 'jest-styled-components';
 
-describe('Accordion', () => {
+describe.skip('Accordion', () => {
+  it('auto match snapshot', () => {
+    const Wrapper = ((props) => (<Accordion accordion>
+      <Accordion.Pannel header="SECTION 1">module 1</Accordion.Pannel>
+      <Accordion.Pannel header="SECTION 2">module 2</Accordion.Pannel>
+      <Accordion.Pannel header="SECTION 3">module 3</Accordion.Pannel>
+    </Accordion>))
+    AutoMath(Wrapper, {}, null)
+  })
+  it('without Error', () => {
+    const Wrapper = ((props) => (<Accordion accordion>
+      <Accordion.Pannel header="SECTION 1">module 1</Accordion.Pannel>
+      <Accordion.Pannel header="SECTION 2">module 2</Accordion.Pannel>
+      <Accordion.Pannel header="SECTION 3">module 3</Accordion.Pannel>
+    </Accordion>))
+    ComponentRenderWithoutError(Wrapper, {}, null)
+  })
   it('Accordion accordion props default case ', () => {
     const AccordionActiveKey = mount(
       <Accordion accordion>
