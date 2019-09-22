@@ -424,12 +424,12 @@ Object.defineProperty(exports, 'Rect', {
   }
 });
 
-var _ScrollTo = require('./components/ScrollTo');
+var _scrollTo = require('./components/scrollTo');
 
 Object.defineProperty(exports, 'ScrollTo', {
   enumerable: true,
   get: function get() {
-    return _interopRequireDefault(_ScrollTo).default;
+    return _interopRequireDefault(_scrollTo).default;
   }
 });
 
