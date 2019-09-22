@@ -1,0 +1,1089 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Animate#help get the animate help snapshot 1`] = `
+Object {
+  "bouceOut": undefined,
+  "bounce": Object {
+    "0%": Object {
+      "animationTimingFunction": "cubic-bezier(0.2125, 0.61, 0.355, 1)",
+      "transform": "translate3d(0, 0, 0)",
+    },
+    "100%": Object {
+      "animationTimingFunction": "cubic-bezier(0.2125, 0.61, 0.355, 1)",
+      "transform": "translate3d(0, 0, 0)",
+    },
+    "20%": Object {
+      "animationTimingFunction": "cubic-bezier(0.2125, 0.61, 0.355, 1)",
+      "transform": "translate3d(0, 0, 0)",
+    },
+    "40%": Object {
+      "animationTimingFunction": "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+      "transform": "translate3d(0, -30px, 0)",
+    },
+    "43%": Object {
+      "animationTimingFunction": "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+      "transform": "translate3d(0, -30px, 0)",
+    },
+    "53%": Object {
+      "animationTimingFunction": "cubic-bezier(0.2125, 0.61, 0.355, 1)",
+      "transform": "translate3d(0, 0, 0)",
+    },
+    "70%": Object {
+      "animationTimingFunction": "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+      "transform": "translate3d(0, -50px, 0)",
+    },
+    "80%": Object {
+      "animationTimingFunction": "cubic-bezier(0.2125, 0.61, 0.355, 1)",
+      "transform": "translate3d(0, 0, 0)",
+    },
+    "90%": Object {
+      "transform": "translate3d(0, -4px, 0)",
+    },
+  },
+  "bounceIn": Object {
+    "0%": Object {
+      "opacity": 0,
+      "transform": "scale3d(0.3, 0.3, 0.3)",
+    },
+    "20%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "scale3d(1.1, 1.1, 1.1)",
+    },
+    "40%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "scale3d(0.9, 0.9, 0.9)",
+    },
+    "60%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "opacity": 1,
+      "transform": "scale3d(1.03, 1.03, 1.03)",
+    },
+    "80%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "scale3d(0.97, 0.97, 0.97)",
+    },
+    "from": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+    },
+    "to": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "opacity": 1,
+      "transform": "scale3d(1, 1, 1)",
+    },
+  },
+  "bounceInDown": Object {
+    "0%": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, -3000px, 0)",
+    },
+    "60%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "opacity": 1,
+      "transform": "translate3d(0, 25px, 0)",
+    },
+    "75%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "translate3d(0, -10px, 0)",
+    },
+    "90%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "translate3d(0, 5px, 0)",
+    },
+    "from": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+    },
+    "to": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "none",
+    },
+  },
+  "bounceInLeft": Object {
+    "0%": Object {
+      "opacity": 0,
+      "transform": "translate3d(-3000px, 0, 0)",
+    },
+    "60%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "opacity": 1,
+      "transform": "translate3d(25px, 0, 0)",
+    },
+    "75%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "translate3d(-10px, 0, 0)",
+    },
+    "90%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "translate3d(5px, 0, 0)",
+    },
+    "from": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+    },
+    "to": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "none",
+    },
+  },
+  "bounceInRight": Object {
+    "0%": Object {
+      "opacity": 0,
+      "transform": "translate3d(3000px, 0, 0)",
+    },
+    "60%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "opacity": 1,
+      "transform": "translate3d(-25px, 0, 0)",
+    },
+    "75%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "translate3d(10px, 0, 0)",
+    },
+    "90%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "translate3d(-5px, 0, 0)",
+    },
+    "from": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+    },
+    "to": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "none",
+    },
+  },
+  "bounceInUp": Object {
+    "0%": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, 3000px, 0)",
+    },
+    "60%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "opacity": 1,
+      "transform": "translate3d(0, -20px, 0)",
+    },
+    "75%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "translate3d(0, 10px, 0)",
+    },
+    "90%": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "translate3d(0, -5px, 0)",
+    },
+    "from": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+    },
+    "to": Object {
+      "animationTimingFunction": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "transform": "none",
+    },
+  },
+  "bounceOutDown": Object {
+    "20%": Object {
+      "transform": "translate3d(0, 10px, 0)",
+    },
+    "40%": Object {
+      "transform": "translate3d(0, -20px, 0)",
+    },
+    "45%": Object {
+      "transform": "translate3d(0, -20px, 0)",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, 2000px, 0)",
+    },
+  },
+  "bounceOutLeft": Object {
+    "20%": Object {
+      "opacity": 1,
+      "transform": "translate3d(20px, 0, 0)",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(-2000px, 0, 0)",
+    },
+  },
+  "bounceOutRight": Object {
+    "20%": Object {
+      "opacity": 1,
+      "transform": "translate3d(-20px, 0, 0)",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "translate3d(2000px, 0, 0)",
+    },
+  },
+  "bounceOutUp": Object {
+    "20%": Object {
+      "transform": "translate3d(0, -10px, 0)",
+    },
+    "40%": Object {
+      "opacity": 1,
+      "transform": "translate3d(0, 20px, 0)",
+    },
+    "45%": Object {
+      "opacity": 1,
+      "transform": "translate3d(0, 20px, 0)",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, -2000px, 0)",
+    },
+  },
+  "fadeIn": Object {
+    "from": Object {
+      "opacity": 0,
+    },
+    "to": Object {
+      "opacity": 1,
+    },
+  },
+  "fadeInDown": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, -100%, 0)",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+    },
+  },
+  "fadeInDownBig": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, -2000px, 0)",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+    },
+  },
+  "fadeInLeft": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "translate3d(-100%, 0, 0)",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+    },
+  },
+  "fadeInLeftBig": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "translate3d(-2000px, 0, 0)",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+    },
+  },
+  "fadeInRight": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "translate3d(100%, 0, 0)",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+    },
+  },
+  "fadeInRightBig": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "translate3d(2000px, 0, 0)",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+    },
+  },
+  "fadeInUp": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, 100%, 0)",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+    },
+  },
+  "fadeInUpBig": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, 2000px, 0)",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+    },
+  },
+  "fadeOut": Object {
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 0,
+    },
+  },
+  "fadeOutDown": Object {
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, 100%, 0)",
+    },
+  },
+  "fadeOutDownBig": Object {
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, 2000px, 0)",
+    },
+  },
+  "fadeOutLeft": Object {
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(-100%, 0, 0)",
+    },
+  },
+  "fadeOutLeftBig": Object {
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(-2000px, 0, 0)",
+    },
+  },
+  "fadeOutRight": Object {
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(100%, 0, 0)",
+    },
+  },
+  "fadeOutRightBig": Object {
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(2000px, 0, 0)",
+    },
+  },
+  "fadeOutUp": Object {
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, -100%, 0)",
+    },
+  },
+  "fadeOutUpBig": Object {
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, -2000px, 0)",
+    },
+  },
+  "flash": Object {
+    "25%": Object {
+      "opacity": 0,
+    },
+    "50%": Object {
+      "opacity": 1,
+    },
+    "75%": Object {
+      "opacity": 0,
+    },
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 1,
+    },
+  },
+  "flip": Object {
+    "40%": Object {
+      "animationTimingFunction": "ease-out",
+      "transform": "perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg)",
+    },
+    "50%": Object {
+      "animationTimingFunction": "ease-in",
+      "transform": "perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg)",
+    },
+    "80%": Object {
+      "animationTimingFunction": "ease-in",
+      "transform": "perspective(400px) scale3d(0.95, 0.95, 0.95)",
+    },
+    "from": Object {
+      "animationTimingFunction": "ease-out",
+      "transform": "perspective(400px) rotate3d(0, 1, 0, -360deg)",
+    },
+    "to": Object {
+      "animationTimingFunction": "ease-in",
+      "transform": "perspective(400px)",
+    },
+  },
+  "flipInX": Object {
+    "40%": Object {
+      "animationTimingFunction": "ease-in",
+      "transform": "perspective(400px) rotate3d(1, 0, 0, -20deg)",
+    },
+    "60%": Object {
+      "transform": "perspective(400px) rotate3d(1, 0, 0, 10deg)",
+    },
+    "80%": Object {
+      "transform": "perspective(400px) rotate3d(1, 0, 0, -5deg)",
+    },
+    "from": Object {
+      "animationTimingFunction": "ease-out",
+      "opacity": 0,
+      "transform": "perspective(400px) rotate3d(1, 0, 0, 90deg)",
+    },
+    "to": Object {
+      "transform": "perspective(400px)",
+    },
+  },
+  "flipInY": Object {
+    "40%": Object {
+      "animationTimingFunction": "ease-in",
+      "transform": "perspective(400px) rotate3d(0, 1, 0, -20deg)",
+    },
+    "60%": Object {
+      "transform": "perspective(400px) rotate3d(0, 1, 0, 10deg)",
+    },
+    "80%": Object {
+      "transform": "perspective(400px) rotate3d(0, 1, 0, -5deg)",
+    },
+    "from": Object {
+      "animationTimingFunction": "ease-out",
+      "opacity": 0,
+      "transform": "perspective(400px) rotate3d(0, 1, 0, 90deg)",
+    },
+    "to": Object {
+      "transform": "perspective(400px)",
+    },
+  },
+  "flipOutX": Object {
+    "30%": Object {
+      "opacity": 1,
+      "transform": "perspective(400px) rotate3d(1, 0, 0, -20deg)",
+    },
+    "from": Object {
+      "transform": "perspective(400px)",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "perspective(400px) rotate3d(1, 0, 0, 90deg)",
+    },
+  },
+  "flipOutY": Object {
+    "30%": Object {
+      "opacity": 1,
+      "transform": "perspective(400px) rotate3d(0, 1, 0, -15deg)",
+    },
+    "from": Object {
+      "transform": "perspective(400px)",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "perspective(400px) rotate3d(0, 1, 0, 90deg)",
+    },
+  },
+  "headShake": Object {
+    "0%": Object {
+      "transform": "translateX(0)",
+    },
+    "18.5%": Object {
+      "transform": "translateX(5px) rotateY(7deg)",
+    },
+    "31.5%": Object {
+      "transform": "translateX(-3px) rotateY(-5deg)",
+    },
+    "43.5%": Object {
+      "transform": "translateX(2px) rotateY(3deg)",
+    },
+    "50%": Object {
+      "transform": "translateX(0)",
+    },
+    "6.5%": Object {
+      "transform": "translateX(-6px) rotateY(-9deg)",
+    },
+  },
+  "hinge": Object {
+    "0%": Object {
+      "animationTimingFunction": "ease-in-out",
+      "transformOrigin": "top left",
+    },
+    "20%": Object {
+      "animationTimingFunction": "ease-in-out",
+      "transform": "rotate3d(0, 0, 1, 80deg)",
+      "transformOrigin": "top left",
+    },
+    "40%": Object {
+      "animationTimingFunction": "ease-in-out",
+      "opacity": 1,
+      "transform": "rotate3d(0, 0, 1, 60deg)",
+      "transformOrigin": "top left",
+    },
+    "60%": Object {
+      "animationTimingFunction": "ease-in-out",
+      "transform": "rotate3d(0, 0, 1, 80deg)",
+      "transformOrigin": "top left",
+    },
+    "80%": Object {
+      "animationTimingFunction": "ease-in-out",
+      "opacity": 1,
+      "transform": "rotate3d(0, 0, 1, 60deg)",
+      "transformOrigin": "top left",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(0, 700px, 0)",
+    },
+  },
+  "jello": Object {
+    "11.1%": Object {
+      "transform": "none",
+    },
+    "22.2%": Object {
+      "transform": "skewX(-12.5deg) skewY(-12.5deg)",
+    },
+    "33.3": Object {
+      "transform": "skewX(6.25deg) skewY(6.25deg)",
+    },
+    "44.4": Object {
+      "transform": "skewX(-3.125deg) skewY(-3.125deg)",
+    },
+    "55.5": Object {
+      "transform": "skewX(1.5625deg) skewY(1.5625deg)",
+    },
+    "66.6": Object {
+      "transform": "skewX(-0.78125deg) skewY(-0.78125deg)",
+    },
+    "77.7": Object {
+      "transform": "skewX(0.390625deg) skewY(0.390625deg)",
+    },
+    "88.8": Object {
+      "transform": "skewX(-0.1953125deg) skewY(-0.1953125deg)",
+    },
+    "from": Object {
+      "transform": "none",
+    },
+    "to": Object {
+      "transform": "none",
+    },
+  },
+  "lightSpeedIn": Object {
+    "60%": Object {
+      "animationTimingFunction": "ease-out",
+      "opacity": 1,
+      "transform": "skewX(20deg)",
+    },
+    "80%": Object {
+      "animationTimingFunction": "ease-out",
+      "opacity": 1,
+      "transform": "skewX(-5deg)",
+    },
+    "from": Object {
+      "animationTimingFunction": "ease-out",
+      "opacity": 0,
+      "transform": "translate3d(100%, 0, 0) skewX(-30deg)",
+    },
+    "to": Object {
+      "animationTimingFunction": "ease-out",
+      "opacity": 1,
+      "transform": "none",
+    },
+  },
+  "lightSpeedOut": Object {
+    "from": Object {
+      "animationTimingFunction": "ease-out",
+      "opacity": 1,
+    },
+    "to": Object {
+      "animationTimingFunction": "ease-out",
+      "opacity": 0,
+      "transform": "translate3d(100%, 0, 0) skewX(30deg)",
+    },
+  },
+  "merge": [Function],
+  "pulse": Object {
+    "50%": Object {
+      "transform": "scale3d(1.05, 1.05, 1.05)",
+    },
+    "from": Object {
+      "transform": "scale3d(1, 1, 1)",
+    },
+    "to": Object {
+      "transform": "scale3d(1, 1, 1)",
+    },
+  },
+  "rollIn": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg)",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+    },
+  },
+  "rollOut": Object {
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg)",
+    },
+  },
+  "rotateIn": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "rotate3d(0, 0, 1, -200deg)",
+      "transformOrigin": "center",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+      "transformOrigin": "center",
+    },
+  },
+  "rotateInDownLeft": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "rotate3d(0, 0, 1, -45deg)",
+      "transformOrigin": "left bottom",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+      "transformOrigin": "left bottom",
+    },
+  },
+  "rotateInDownRight": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "rotate3d(0, 0, 1, 45deg)",
+      "transformOrigin": "right bottom",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+      "transformOrigin": "right bottom",
+    },
+  },
+  "rotateInUpLeft": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "rotate3d(0, 0, 1, 45deg)",
+      "transformOrigin": "left bottom",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+      "transformOrigin": "left bottom",
+    },
+  },
+  "rotateInUpRight": Object {
+    "from": Object {
+      "opacity": 0,
+      "transform": "rotate3d(0, 0, 1, -90deg)",
+      "transformOrigin": "right bottom",
+    },
+    "to": Object {
+      "opacity": 1,
+      "transform": "none",
+      "transformOrigin": "right bottom",
+    },
+  },
+  "rotateOut": Object {
+    "from": Object {
+      "opacity": 1,
+      "transformOrigin": "center",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "rotate3d(0, 0, 1, 200deg)",
+      "transformOrigin": "center",
+    },
+  },
+  "rotateOutDownLeft": Object {
+    "from": Object {
+      "opacity": 1,
+      "transformOrigin": "left bottom",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "rotate3d(0, 0, 1, 45deg)",
+      "transformOrigin": "left bottom",
+    },
+  },
+  "rotateOutDownRight": Object {
+    "from": Object {
+      "opacity": 1,
+      "transformOrigin": "right bottom",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "rotate3d(0, 0, 1, -45deg)",
+      "transformOrigin": "right bottom",
+    },
+  },
+  "rotateOutUpLeft": Object {
+    "from": Object {
+      "opacity": 1,
+      "transformOrigin": "left bottom",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "rotate3d(0, 0, 1, -45deg)",
+      "transformOrigin": "left bottom",
+    },
+  },
+  "rotateOutUpRight": Object {
+    "from": Object {
+      "opacity": 1,
+      "transformOrigin": "right bottom",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "rotate3d(0, 0, 1, 90deg)",
+      "transformOrigin": "right bottom",
+    },
+  },
+  "rubberBand": Object {
+    "30%": Object {
+      "transform": "scale3d(1.25, 0.75, 1)",
+    },
+    "40%": Object {
+      "transform": "scale3d(0.75, 1.25, 1)",
+    },
+    "50%": Object {
+      "transform": "scale3d(1.15, 0.85, 1)",
+    },
+    "65%": Object {
+      "transform": "scale3d(0.95, 1.05, 1)",
+    },
+    "75%": Object {
+      "transform": "scale3d(1.05, 0.95, 1)",
+    },
+    "from": Object {
+      "transform": "scale3d(1, 1, 1)",
+    },
+    "to": Object {
+      "transform": "scale3d(1, 1, 1)",
+    },
+  },
+  "shake": Object {
+    "10%": Object {
+      "transform": "translate3d(-10px, 0, 0)",
+    },
+    "20%": Object {
+      "transform": "translate3d(10px, 0, 0)",
+    },
+    "30%": Object {
+      "transform": "translate3d(-10px, 0, 0)",
+    },
+    "40%": Object {
+      "transform": "translate3d(10px, 0, 0)",
+    },
+    "50%": Object {
+      "transform": "translate3d(-10px, 0, 0)",
+    },
+    "60%": Object {
+      "transform": "translate3d(10px, 0, 0)",
+    },
+    "70%": Object {
+      "transform": "translate3d(-10px, 0, 0)",
+    },
+    "80%": Object {
+      "transform": "translate3d(10px, 0, 0)",
+    },
+    "90%": Object {
+      "transform": "translate3d(-10px, 0, 0)",
+    },
+    "from": Object {
+      "transform": "translate3d(0, 0, 0)",
+    },
+    "to": Object {
+      "transform": "translate3d(0, 0, 0)",
+    },
+  },
+  "slideInDown": Object {
+    "from": Object {
+      "transform": "translate3d(0, -100%, 0)",
+      "visibility": "visible",
+    },
+    "to": Object {
+      "transform": "translate3d(0, 0, 0)",
+    },
+  },
+  "slideInLeft": Object {
+    "from": Object {
+      "transform": "translate3d(-100%, 0, 0)",
+      "visibility": "visible",
+    },
+    "to": Object {
+      "transform": "translate3d(0, 0, 0)",
+    },
+  },
+  "slideInRight": Object {
+    "from": Object {
+      "transform": "translate3d(100%, 0, 0)",
+      "visibility": "visible",
+    },
+    "to": Object {
+      "transform": "translate3d(0, 0, 0)",
+    },
+  },
+  "slideInUp": Object {
+    "from": Object {
+      "transform": "translate3d(0, 100%, 0)",
+      "visibility": "visible",
+    },
+    "to": Object {
+      "transform": "translate3d(0, 0, 0)",
+    },
+  },
+  "slideOutDown": Object {
+    "from": Object {
+      "transform": "translate3d(0, 0, 0)",
+    },
+    "to": Object {
+      "transform": "translate3d(0, 100%, 0)",
+      "visibility": "hidden",
+    },
+  },
+  "slideOutLeft": Object {
+    "from": Object {
+      "transform": "translate3d(0, 0, 0)",
+    },
+    "to": Object {
+      "transform": "translate3d(-100%, 0, 0)",
+      "visibility": "hidden",
+    },
+  },
+  "slideOutRight": Object {
+    "from": Object {
+      "transform": "translate3d(0, 0, 0)",
+    },
+    "to": Object {
+      "transform": "translate3d(100%, 0, 0)",
+      "visibility": "hidden",
+    },
+  },
+  "slideOutUp": Object {
+    "from": Object {
+      "transform": "translate3d(0, 0, 0)",
+    },
+    "to": Object {
+      "transform": "translate3d(0, -100%, 0)",
+      "visibility": "hidden",
+    },
+  },
+  "swing": Object {
+    "20%": Object {
+      "transform": "rotate3d(0, 0, 1, 15deg)",
+    },
+    "40%": Object {
+      "transform": "rotate3d(0, 0, 1, -10deg)",
+    },
+    "60%": Object {
+      "transform": "rotate3d(0, 0, 1, 5deg)",
+    },
+    "80%": Object {
+      "transform": "rotate3d(0, 0, 1, -5deg)",
+    },
+    "to": Object {
+      "transform": "rotate3d(0, 0, 1, 15deg)",
+    },
+  },
+  "tada": Object {
+    "10%": Object {
+      "transform": "scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)",
+    },
+    "20%": Object {
+      "transform": "scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)",
+    },
+    "30%": Object {
+      "transform": "scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)",
+    },
+    "40%": Object {
+      "transform": "scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)",
+    },
+    "50%": Object {
+      "transform": "scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)",
+    },
+    "60%": Object {
+      "transform": "scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)",
+    },
+    "70%": Object {
+      "transform": "scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)",
+    },
+    "80%": Object {
+      "transform": "scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)",
+    },
+    "90%": Object {
+      "transform": "scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)",
+    },
+    "from": Object {
+      "transform": "scale3d(1, 1, 1)",
+    },
+    "to": Object {
+      "transform": "scale3d(1, 1, 1)",
+    },
+  },
+  "wobble": Object {
+    "15%": Object {
+      "transform": "translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg)",
+    },
+    "30%": Object {
+      "transform": "translate3d(20%, 0, 0) rotate3d(0, 0, 1, -5deg)",
+    },
+    "45%": Object {
+      "transform": "translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)",
+    },
+    "60%": Object {
+      "transform": "translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg)",
+    },
+    "75%": Object {
+      "transform": "translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg)",
+    },
+    "from": Object {
+      "transform": "none",
+    },
+    "to": Object {
+      "transform": "none",
+    },
+  },
+  "zoomIn": Object {
+    "50%": Object {
+      "opacity": 1,
+    },
+    "from": Object {
+      "opacity": 0,
+      "transform": "scale3d(0.3, 0.3, 0.3)",
+    },
+  },
+  "zoomInDown": Object {
+    "60%": Object {
+      "animationTimingFunction": "cubic-bezier(0.175, 0.885, 0.32, 1)",
+      "opacity": 1,
+      "transform": "scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0)",
+    },
+    "from": Object {
+      "animationTimingFunction": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+      "opacity": 0,
+      "transform": "scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)",
+    },
+  },
+  "zoomInLeft": Object {
+    "60%": Object {
+      "animationTimingFunction": "cubic-bezier(0.175, 0.885, 0.32, 1)",
+      "opacity": 1,
+      "transform": "scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0)",
+    },
+    "from": Object {
+      "animationTimingFunction": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+      "opacity": 0,
+      "transform": "scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0)",
+    },
+  },
+  "zoomInRight": Object {
+    "60%": Object {
+      "animationTimingFunction": "cubic-bezier(0.175, 0.885, 0.32, 1)",
+      "opacity": 1,
+      "transform": "scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0)",
+    },
+    "from": Object {
+      "animationTimingFunction": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+      "opacity": 0,
+      "transform": "scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0)",
+    },
+  },
+  "zoomInUp": Object {
+    "60%": Object {
+      "animationTimingFunction": "cubic-bezier(0.175, 0.885, 0.32, 1)",
+      "opacity": 1,
+      "transform": "scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0)",
+    },
+    "from": Object {
+      "animationTimingFunction": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+      "opacity": 0,
+      "transform": "scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0)",
+    },
+  },
+  "zoomOut": Object {
+    "50%": Object {
+      "opacity": 0,
+      "transform": "scale3d(0.3, 0.3, 0.3)",
+    },
+    "from": Object {
+      "opacity": 1,
+    },
+    "to": Object {
+      "opacity": 0,
+    },
+  },
+  "zoomOutDown": Object {
+    "40%": Object {
+      "animationTimingFunction": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+      "opacity": 1,
+      "transform": "scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0)",
+    },
+    "to": Object {
+      "animationTimingFunction": "cubic-bezier(0.175, 0.885, 0.32, 1)",
+      "opacity": 0,
+      "transform": "scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0)",
+      "transformOrigin": "center bottom",
+    },
+  },
+  "zoomOutLeft": Object {
+    "40%": Object {
+      "opacity": 1,
+      "transform": "scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0)",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "scale(0.1) translate3d(-2000px, 0, 0)",
+      "transformOrigin": "left center",
+    },
+  },
+  "zoomOutRight": Object {
+    "40%": Object {
+      "opacity": 1,
+      "transform": "scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0)",
+    },
+    "to": Object {
+      "opacity": 0,
+      "transform": "scale(0.1) translate3d(2000px, 0, 0)",
+      "transformOrigin": "right center",
+    },
+  },
+  "zoomOutUp": Object {
+    "40%": Object {
+      "animationTimingFunction": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+      "opacity": 1,
+      "transform": "scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0)",
+    },
+    "to": Object {
+      "animationTimingFunction": "cubic-bezier(0.175, 0.885, 0.32, 1)",
+      "opacity": 0,
+      "transform": "scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0)",
+      "transformOrigin": "center bottom",
+    },
+  },
+}
+`;
