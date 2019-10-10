@@ -1,19 +1,38 @@
 import React, { Component, Fragment } from 'react';
+import styled from 'styled-components';
+
+const FailHeader = styled.h2`
+  font-size: 2em;
+  color: black;
+`;
+const FailContent = styled.section`
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333;
+`;
 
 const defaultCallback = function(a, b, c) {
   throw b;
 };
 
+const RandomString = () =>
+  Math.random()
+    .toString()
+    .slice(2, 10);
+
 const DefaultFallBackComponent = ({ error, componentStack }) => {
   componentStack = componentStack.split('\n');
+  const FailId = RandomString();
   return (
-    <div>
-      <div style={{ color: 'red' }}>{error.message}</div>
-      <div style={{ color: 'green' }}>
+    <div aria-labelledby={FailId}>
+      <FailHeader id={FailId} aria-label="title">
+        {error.message}
+      </FailHeader>
+      <FailContent>
         {componentStack.map((stack, index) => {
           return <p key={stack + index}>{stack}</p>;
         })}
-      </div>
+      </FailContent>
     </div>
   );
 };
