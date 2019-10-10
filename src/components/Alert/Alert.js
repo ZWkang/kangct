@@ -150,7 +150,7 @@ class Alert extends Component {
     const { show } = this.state;
     if (!show) return null;
     return (
-      <AlertWrapper type={type}>
+      <AlertWrapper type={type} role="alert">
         <AlertContentWrapper>
           <AlertTitle>{title}</AlertTitle>
           <AlertMessage>{message ? message : children}</AlertMessage>
