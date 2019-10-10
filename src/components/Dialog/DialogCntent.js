@@ -24,9 +24,7 @@ const controlMaxWidth = (props) => {
     minWidth: maxWidthSizeMap[props.maxWidth] || maxWidthSizeMap['normal']
   };
 };
-const DialogContent = styled.div.attrs({
-  tabIndex: 0
-})`
+const DialogContent = styled.div`
   z-index: 100;
   display: flex;
   flex-direction: column;

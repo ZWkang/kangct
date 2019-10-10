@@ -3,15 +3,26 @@ import React from 'react';
 import Protal from '../Protal';
 import DialogContent from './DialogCntent';
 import DialogTitle from './DialogTitle';
-class Dialog extends React.Component {
-  render() {
-    const { props } = this;
-    return (
-      <Protal>
-        <DialogAnimate {...props}>{this.props.children}</DialogAnimate>
-      </Protal>
-    );
-  }
+// class Dialog extends React.Component {
+//   render() {
+//     const { props } = this;
+//     return (
+//       <Protal>
+//         <DialogAnimate {...props}>{this.props.children}</DialogAnimate>
+//       </Protal>
+//     );
+//   }
+// }
+
+function Dialog(props) {
+  const { children } = props;
+  return (
+    <Protal>
+      {/* <div tabIndex="0" /> */}
+      <DialogAnimate {...props}>{children}</DialogAnimate>
+      {/* <div tabIndex="0" /> */}
+    </Protal>
+  );
 }
 
 Dialog.DialogContent = DialogContent;

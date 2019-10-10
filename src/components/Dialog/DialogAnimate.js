@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
 import styled, { keyframes, createGlobalStyle } from 'styled-components';
 import is, { isNot } from 'styled-is';
 import Animated from '../Animate/help';
@@ -17,6 +17,9 @@ const LockBody = createGlobalStyle`
 const enter = keyframes`
   from {
     opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 `;
 
@@ -82,92 +85,106 @@ const Animate = styled.div`
     animation-duration: ${(props) => props.duration || 0}ms;
   `}
 `;
-class DialogAnimate extends React.Component {
-  constructor(props) {
-    super(props);
-    this.animateRef = null;
-  }
-  state = {
-    isShow: false,
-    animationType: 'leave'
-  };
 
-  componentDidMount() {
-    if (this.props.visible) {
-      this.enter();
+function DialogAnimate(props) {
+  // class DialogAnimate extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  let animateRef = useRef(null);
+  // }
+  // state = {
+  //   isShow: false,
+  //   animationType: 'leave'
+  // };
+  const [isShow, setIsShow] = useState(false);
+  const [animationType, setAnimationType] = useState('leave');
+
+  useEffect(() => {
+    if (props.visible) {
+      enter();
     }
-  }
+  }, []);
 
-  componentWillReceiveProps(nextProps) {
-    if (!this.props.visible && nextProps.visible) {
-      this.enter();
-    } else if (this.props.visible && !nextProps.visible) {
-      this.leave();
+  // componentDidMount() {
+  //   if (this.props.visible) {
+  //     this.enter();
+  //   }
+  // }
+  useEffect(() => {
+    if (props.visible) {
+      enter();
+    } else if (!props.visible) {
+      leave();
     }
-  }
-  enter() {
-    this.setState(
-      {
-        isShow: true,
-        animationType: 'enter'
-      },
-      () => {
-        document.body.classList.add('modal-lock');
-      }
-    );
+  }, [props.visible]);
+  // componentWillReceiveProps(nextProps) {
+  //   if (!this.props.visible && nextProps.visible) {
+  //     this.enter();
+  //   } else if (this.props.visible && !nextProps.visible) {
+  //     this.leave();
+  //   }
+  // }
+  function enter() {
+    setIsShow(true);
+    setAnimationType('enter');
+
+    document.body.classList.add('modal-lock');
   }
 
-  leave() {
-    this.setState({ animationType: 'leave' }, () => {
-      document.body.classList.remove('modal-lock');
-    });
+  function leave() {
+    setAnimationType('leave');
+    document.body.classList.remove('modal-lock');
   }
-  handleEscCode = (event) => {
-    const { onClose } = this.props;
+  function handleEscCode(event) {
+    const { onClose } = props;
     if (event.keyCode === 27) {
       onClose && onClose();
     }
-  };
-  handleAnimationEnd = (event) => {
-    const { onEachAnimationEnd, onEnterAnimationEnd, onLeaveAnimationEnd } = this.props;
-    if (this.state.animationType === 'leave') {
-      this.setState({ isShow: false }, () => {
-        onLeaveAnimationEnd && onLeaveAnimationEnd(event);
-      });
+  }
+  function handleAnimationEnd(event) {
+    const { onEachAnimationEnd, onEnterAnimationEnd, onLeaveAnimationEnd } = props;
+    if (animationType === 'leave') {
+      // this.setState({ isShow: false }, () => {
+      //   onLeaveAnimationEnd && onLeaveAnimationEnd(event);
+      // });
+      setIsShow(false);
+      onLeaveAnimationEnd && onLeaveAnimationEnd(event);
     }
-    if (this.state.animationType === 'enter') {
+    if (animationType === 'enter') {
       onEnterAnimationEnd && onEnterAnimationEnd(event);
     }
-    if (this.props.visible) {
-      this.animateRef.focus();
+    if (props.visible) {
+      // console.log(animateRef);
+      animateRef.current && animateRef.current.focus();
+      // debugger;
+      // animateRef.current.focus();
     }
+
     onEachAnimationEnd && onEachAnimationEnd(event);
-  };
-  render() {
-    const { isShow } = this.state;
-    const { duration, onClose, children } = this.props;
-    if (!isShow) return null;
-    return (
-      <FTR>
-        <Animate
-          onAnimationEnd={this.handleAnimationEnd}
-          animationType={this.state.animationType}
-          onKeyUp={this.handleEscCode}
-          aria-modal="true"
-          ref={(ref) => (this.animateRef = ref)}
-          tabIndex="0"
-          display
-          duration={duration}
-        >
-          <div tabIndex="0" />
-          <LockBody />
-          <AnimateMask onClick={onClose} />
-          {children}
-          <div tabIndex="0" />
-        </Animate>
-      </FTR>
-    );
   }
+  // render() {
+  // const { isShow } = this.state;
+  const { duration, onClose, children } = props;
+  if (!isShow) return null;
+  return (
+    <FTR>
+      <Animate
+        onAnimationEnd={handleAnimationEnd}
+        animationType={animationType}
+        onKeyUp={handleEscCode}
+        aria-modal="true"
+        ref={animateRef}
+        display
+        duration={duration}
+        role="dialog"
+      >
+        <LockBody />
+        <AnimateMask onClick={onClose} />
+        {children}
+      </Animate>
+    </FTR>
+  );
+  // }
 }
 
 export default DialogAnimate;
