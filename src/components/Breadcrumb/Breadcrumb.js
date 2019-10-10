@@ -41,7 +41,7 @@ class Breadcrumb extends React.Component {
   render() {
     const { crumbs } = this.props;
     return (
-      <BreadcrumbWrapper>
+      <BreadcrumbWrapper aria-label="Breadcrumbs">
         <BreadcrumbColWrapper>
           {crumbs.map(({ link, title, render }, index) => {
             let last = false;
