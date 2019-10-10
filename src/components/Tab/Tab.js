@@ -25,17 +25,30 @@ let wrapEvent = (handler, cb) => (event) => {
   }
 };
 
+let random = () =>
+  Math.random()
+    .toString()
+    .slice(2, 10);
+
 const defaultRenderBody = ({ dataList, activeIndex }) => {
   return <TabBody />;
 };
+
+function registerIds(tabs) {
+  return tabs.map((tab) => random());
+}
+
 class Tab extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       selectIndex: props.activeIndex || 0,
-      focused: false
+      focused: false,
+      ids: registerIds(props.tabs)
     };
   }
+
   handleTabKeyDown = (e) => {
     const { tabs } = this.props;
     switch (e.key) {
@@ -113,7 +126,7 @@ class Tab extends Component {
   };
   handleRenderBody = () => {
     const { activeIndex, renderBody, tabs } = this.props;
-    const { selectIndex } = this.state;
+    const { selectIndex, ids } = this.state;
     return (
       <Flex onClick={this.handleFocus} onFocus={this.handleFocus} onBlur={this.handleBlur}>
         {tabs.map((tab, index) => {
@@ -122,11 +135,11 @@ class Tab extends Component {
             <TabBody
               tabIndex={0}
               role="tabpanel"
-              aria-labelledby={tab}
               key={index}
               display={index === selectIndex ? 'flex' : 'none'}
               hidden={index === selectIndex ? '' : 'hidden'}
-              aria-labelledby={name}
+              aria-labelledby={`${name}-${ids[index]}`}
+              id={`tab-${name}-${ids[index]}`}
               full
             >
               {body}
@@ -138,9 +151,11 @@ class Tab extends Component {
   };
   render() {
     const { tabs } = this.props;
+    const { ids } = this.state;
+    console.log('re-render');
     return (
       <TabsContainer>
-        <TabsWrapper onKeyDown={this.handleTabKeyDown}>
+        <TabsWrapper role="tablist" aria-label="Entertainment" onKeyDown={this.handleTabKeyDown}>
           {tabs.map((tab, index) => {
             const { body, name } = tab;
             const isSelect = index === this.state.selectIndex;
@@ -148,7 +163,8 @@ class Tab extends Component {
             return (
               <TabsItem
                 key={'tab-' + name}
-                aria-controls={'tab-' + name}
+                aria-controls={'tab-' + name + '-' + ids[index]}
+                id={`${name}-${ids[index]}`}
                 aria-selected={isSelect}
                 role="tab"
                 tabIndex={isSelect ? 0 : -1}
