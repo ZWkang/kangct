@@ -6,7 +6,7 @@ const Group = styled.div`
   display: flex;
   flex-direction: row;
   > * {
-    margin-left: 0!important;
+    margin-left: -1px!important;
     margin-right: 0;
     min-height: 2em;
     height: auto;
@@ -29,7 +29,7 @@ const Group = styled.div`
     width: auto;
     flex-direction: column;
     > * {
-        margin-top: 0!important;
+        margin-top: -1px!important;
         margin-bottom: 0!important;
         flex: 0 0 100%;
     }

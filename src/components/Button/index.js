@@ -97,7 +97,7 @@ const Button = styled.button.attrs((props) => ({
         /* outline: 2px auto rgba(19,124,189,.6);
         outline-offset: 2px; */
         /* z-index: ${ButtonFocusZIndex}; */
-        position:relative;
+        z-index: 2;
     }
 
     /* user-select:none; */
