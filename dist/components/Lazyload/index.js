@@ -5,10 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _Protal = require('./Protal');
+var _Lazyload = require('./Lazyload');
 
-var _Protal2 = _interopRequireDefault(_Protal);
+var _Lazyload2 = _interopRequireDefault(_Lazyload);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _Protal2.default;
+exports.default = _Lazyload2.default;
