@@ -11,7 +11,7 @@ class Accordion extends React.Component {
       activeKey
     };
   }
-  handlePannelClick = (key) => {
+  handlePanelClick = (key) => {
     let activeKey = this.state.activeKey;
     let Accordion = !this.props.accordion;
     // debugger
@@ -35,7 +35,7 @@ class Accordion extends React.Component {
     const propsActiveKey = this.props.accordion ? activeKey[0] : activeKey;
     this.props.onChange && this.props.onChange(propsActiveKey);
   };
-  renderPannels = () => {
+  renderPanels = () => {
     const { children } = this.props;
     const { activeKey } = this.state;
 
@@ -55,27 +55,27 @@ class Accordion extends React.Component {
         disabled,
         Active,
         key,
-        handlePannelClick: disabled ? () => {} : () => this.handlePannelClick(key)
+        handlePanelClick: disabled ? () => {} : () => this.handlePanelClick(key)
       };
       return React.cloneElement(child, props);
     });
   };
   render() {
     const { children } = this.props;
-    return <Collapse>{this.renderPannels()}</Collapse>;
+    return <Collapse>{this.renderPanels()}</Collapse>;
   }
 }
 
-class Pannel extends React.Component {
+class Panel extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-    const { disabled, Active, shadow, key, handlePannelClick, header, children } = this.props;
+    const { disabled, Active, shadow, key, handlePanelClick, header, children } = this.props;
     return (
       <React.Fragment>
         <Collapse.Item itemShadow={shadow}>
-          <Collapse.ItemHeader onClick={handlePannelClick} disabled={disabled}>
+          <Collapse.ItemHeader onClick={handlePanelClick} disabled={disabled}>
             <Collapse.ItemHeaderTitle>{header}</Collapse.ItemHeaderTitle>
           </Collapse.ItemHeader>
           <Collapse.ItemContent show={Active}>{children}</Collapse.ItemContent>
@@ -84,24 +84,24 @@ class Pannel extends React.Component {
     );
   }
 }
-Pannel.propTypes = {
+Panel.propTypes = {
   disabled: PropTypes.bool,
   Active: PropTypes.bool,
   shadow: PropTypes.bool,
-  handlePannelClick: PropTypes.func,
+  handlePanelClick: PropTypes.func,
   header: PropTypes.string,
   children: PropTypes.node
 };
-Pannel.defaultProps = {
+Panel.defaultProps = {
   disabled: false,
   Active: false,
   shadow: false,
-  handlePannelClick: noop,
+  handlePanelClick: noop,
   header: '',
   children: null
 };
 
-Accordion.Pannel = Pannel;
+Accordion.Panel = Panel;
 
 // Accordion.propTypes =
 Accordion.defaultProps = {

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import is from 'styled-is';
-import { FlexItemPropsTypes, FlexCommonPorps } from './props';
+import { FlexItemPropsTypes, FlexCommonProps } from './props';
 
 const FlexItemDefaultCssString = `
   order: 0;
@@ -13,7 +13,6 @@ const FlexItemDefaultCssString = `
 `;
 
 const FlexItem = styled.div`
-
   ${FlexItemDefaultCssString}
 
   ${is('order')`
@@ -47,6 +46,6 @@ const FlexItem = styled.div`
 `;
 
 FlexItem.propTypes = FlexItemPropsTypes;
-FlexItem.defaultProps = FlexCommonPorps;
+FlexItem.defaultProps = FlexCommonProps;
 
 export default FlexItem;
