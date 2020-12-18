@@ -3,7 +3,7 @@ import is from 'styled-is';
 import styled from 'styled-components';
 import Triangle from './Triangle';
 import Rect from '../Rect';
-import Protal from '../Protal';
+import Portal from '../Portal';
 import TooltipsWrapper from './TooltipsWrapper';
 
 const varTrans = (name) => (props) =>
@@ -31,7 +31,7 @@ const Position = styled.div`
 const Tool = styled.div`
   position: absolute;
   width: auto;
-  
+
   ${is('top')`
     bottom: 0;
     transform: translateX(-50%);
@@ -103,11 +103,11 @@ class ToolTips extends Component {
       return null;
     }
     return (
-      <Protal>
+      <Portal>
         <Rect target={target} show={show}>
           {this.renderToolTipsPosition}
         </Rect>
-      </Protal>
+      </Portal>
     );
   }
 }
