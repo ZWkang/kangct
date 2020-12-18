@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import DropdownItem from './DropdownItem';
 import Rect from '../Rect';
-import Protal from '../Protal';
+import Portal from '../Portal';
 import { UlContainer } from './DropdownWrapper';
 import enhanceWithClickOutside from 'react-click-outside';
 //TODO: 修改为focus blur 触发事件
@@ -97,7 +97,7 @@ class Dropdown extends Component {
     return (
       <Temp ref={this.dropdown}>
         {this.renderTitle()}
-        <Protal>
+        <Portal>
           <Rect target={this.dropdown} show={dropdownShow}>
             {({ left, top, height }) => {
               return (
@@ -122,7 +122,7 @@ class Dropdown extends Component {
               );
             }}
           </Rect>
-        </Protal>
+        </Portal>
       </Temp>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import is from 'styled-is';
+
 const Hero = styled.section`
   margin-left: auto;
   margin-right: auto;
@@ -68,16 +69,7 @@ const HeroBody = styled.div`
   margin-right: 0;
   margin-left: 0;
   max-width: 1024px;
-
-  /* -webkit-box-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    
-    padding: 80px 24px; */
 `;
 Hero.HeroBody = HeroBody;
+
 export { HeroBody, HeroA, Hero, HeroH1, HeroLeft, HeroRight, HeroP };

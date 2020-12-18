@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ImageComponent from '../ImageComponent';
 
-const Lazyload = (props) => {
+const LazyLoad = (props) => {
   const { imageUrl, type = 'img' } = props;
   const lazyLoadRef = useRef();
   const onScreen = useOnScreen({ ref: lazyLoadRef, rootMargin: '0px' });
@@ -50,4 +50,4 @@ function useOnScreen({ ref, rootMargin }) {
  * @components
  */
 
-export { Lazyload as default };
+export { LazyLoad as default };

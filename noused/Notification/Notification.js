@@ -1,6 +1,6 @@
 import React, { Componengt } from 'react';
 import styled from 'styled-components';
-import Protal from '../Protal';
+import Portal from '../Portal';
 
 const Container = styled.div`
   position: absolute;
@@ -17,7 +17,7 @@ class Notification extends Componengt {
     };
   }
   render() {
-    return <Protal />;
+    return <Portal />;
   }
 }
 

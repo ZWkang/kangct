@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import Flex from '../Flex';
 import is from 'styled-is';
 const basicSizeWithColumn = 100 / 12;
 
@@ -91,8 +90,6 @@ const GeneratorMedias = (props, filters) => {
   `;
 };
 
-//   return `flex: none; width: ${Number(trueValue) * basicSizeWithColumn}%;`
-// }
 const CalculateDefaultColumnCall = (props) => {
   const result = columnSizeMap.filter((v) => {
     return Boolean(props[v]) === true;
@@ -100,14 +97,17 @@ const CalculateDefaultColumnCall = (props) => {
   if (!result || result.length === 0) return '';
   let size = result[result.length - 1];
   let [, point] = size.split('-');
-  let coulumnProsent = CalculateColumnSize({ columnSize: defaultColumnsLimit, point: point });
+  let columnPercent = CalculateColumnSize({ columnSize: defaultColumnsLimit, point: point });
   return css`
     flex: none;
-    width: ${coulumnProsent}%;
+    width: ${columnPercent}%;
   `;
 };
 const RegexpFilter = (val) => (cb) => (props) =>
-  cb(props, Object.keys(props).filter((item) => val.test(item)));
+  cb(
+    props,
+    Object.keys(props).filter((item) => val.test(item))
+  );
 
 const CalculateOffsetSize = (props, filters) => {
   if (filters.length <= 0) return;
@@ -117,14 +117,13 @@ const CalculateOffsetSize = (props, filters) => {
   const [direction, , point, columnSize] = readySplit.split('-');
 
   let blockDirection = 'margin-right';
-  // console.log(direction);
   if (direction === 'left') {
     blockDirection = 'margin-left';
   }
 
-  let coulumnProsent = CalculateColumnSize({ columnSize: columnSize, point: point });
+  let columnPercent = CalculateColumnSize({ columnSize: columnSize, point: point });
   return `
-    ${blockDirection} :${coulumnProsent}%;
+    ${blockDirection} :${columnPercent}%;
   `;
 };
 
@@ -133,10 +132,10 @@ const CalculateDefaultFlexColumn = (props, val) => {
   const readySplit = val[val.length - 1];
   const [, point, columnSize] = readySplit.split('-');
 
-  let coulumnProsent = CalculateColumnSize({ columnSize: columnSize, point: point });
+  let columnPercent = CalculateColumnSize({ columnSize: columnSize, point: point });
   return css`
     flex: none;
-    width: ${coulumnProsent}%;
+    width: ${columnPercent}%;
   `;
 };
 
@@ -145,21 +144,17 @@ const Column = styled.div`
   position: relative;
   box-sizing: border-box;
   display: inline-block;
-  /* flex-basis: 0;
-  flex-grow: 1;
-  flex-shrink: 1;
-  padding: .75rem; */
   min-height: 1px;
-  padding-top: .75rem;
-  padding-bottom: .75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   float: left;
-  
-  &:after{
+
+  &:after {
     clear: both;
-    content: " ";
+    content: ' ';
     display: table;
   }
-  
+
   ${CalculateDefaultColumnCall}
   ${is('gutter')`
     padding-left: ${getProps('gutter')}
@@ -171,7 +166,6 @@ const Column = styled.div`
   ${RegexpFilter(/^is-\d{0,2}\-\d{0,2}/i)(CalculateDefaultFlexColumn)}
   ${RegexpFilter(/^(left|right)-offset-\d{1,5}(-\d{1,5})?$/i)(CalculateOffsetSize)}
   ${RegexpFilter(/(xs|sm|md|lg|xl)/i)(GeneratorMedias)}
-  
 `;
 
 Column.Row = styled.div`

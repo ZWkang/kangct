@@ -2,7 +2,7 @@
 // import ReactDOM from 'react-dom';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
-// // import Protal from '../Protal';
+// // import Portal from '../Portal';
 // import Timer from './Timer';
 // import { CSSTransition } from 'react-transition-group';
 // import './index.css';

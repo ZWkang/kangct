@@ -1,8 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-// import { injectCustomStyle } from '../utils.js';
 import is, { match } from 'styled-is';
-// import MD from 'react-icons/md';
 import PropTypes from 'prop-types';
 
 const fixedStyleRegExp = /\bis(\d+?)x(\d+)\b/;
@@ -65,8 +63,6 @@ const fullPosition = css`
   right: 0;
   top: 0;
   height: 100%;
-  /* width: 100%; */
-  /* max-width: 100%; */
 `;
 const normalSizes = css`
   display: block;

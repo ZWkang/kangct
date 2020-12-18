@@ -25,6 +25,6 @@ const Box = styled(BoxDefaultCssString)`
   `}
 `;
 
-Box.displayName = 'Box'
+Box.displayName = 'Box';
 
 export default Box;

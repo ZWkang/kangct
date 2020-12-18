@@ -22,13 +22,6 @@ module.exports = {
     },
     {
       name: '组件(Components)',
-      // content: join('/docs/button.md'),
-      // components: function () {
-      //     return joinMap([
-      //         './src/components/ErrorBoundaries/index.js',
-      //         './src/components/Button/index.js'
-      //     ])
-      // }
       components: './src/components/!(util)**/index.js'
     },
     {
@@ -94,12 +87,9 @@ module.exports = {
   },
   require: [
     'babel-polyfill'
-    // path.join(__dirname, 'path/to/script.js'),
-    // path.join(__dirname, 'path/to/styles.css')
   ],
   getExampleFilename(componentPath) {
     let componentList = componentPath.split('/');
-    // console.log(componentList[componentList.length - 1])
     let componentName = componentList[componentList.length - 2].toLowerCase();
 
     // return componentPath.replace(/\.jsx?$/, '.examples.md')

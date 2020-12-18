@@ -49,17 +49,10 @@ const Del = styled.del`
 `;
 
 const HTitleBase = css`
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
-  color: #222223; */
   font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB,
     Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
   font-weight: 100;
   color: #000;
-  /* line-height: 1.35; */
-
-  /* margin-top: 1.2em;
-    margin-bottom: 0.6em;
-    line-height: 1.35; */
 `;
 
 const H1 = styled.h1`

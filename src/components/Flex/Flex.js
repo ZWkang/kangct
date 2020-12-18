@@ -1,11 +1,9 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import is from 'styled-is';
 import { FlexPropsTypes, FlexCommonPorps } from './props.js';
-/* default options*/
 
 // 样式分离
-
 // css in js
 
 const DefaultCssString = `

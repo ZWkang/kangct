@@ -12,7 +12,7 @@ jest.mock('../../src/components/Rect/index.js', () => (props) => {
     height: 300
   });
 });
-jest.mock('../../src/components/Protal/index.js', () => (props) => {
+jest.mock('../../src/components/Portal/index.js', () => (props) => {
   return <div>{props.children}</div>;
 });
 
@@ -63,10 +63,7 @@ describe('Dropdown', () => {
       };
       const wrapper = mount(<Dropdown {...DropdownProps}></Dropdown>);
 
-      wrapper
-        .find(DropdownItem)
-        .at(0)
-        .simulate('click');
+      wrapper.find(DropdownItem).at(0).simulate('click');
       expect(mockClickFn).toBeCalled();
       expect(mockClickFn).toHaveBeenCalledTimes(1);
     });

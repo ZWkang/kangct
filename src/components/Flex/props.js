@@ -26,7 +26,7 @@ export const FlexPropsTypes = {
   customStyle: PropTypes.string
 };
 
-export const FlexCommonPorps = {
+export const FlexCommonProps = {
   customStyle: ''
 };
 
