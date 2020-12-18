@@ -60,7 +60,7 @@ export { default as Loading } from './components/Loading';
 
 // export * from './components/Notification';
 export { default as Pagination } from './components/Pagination';
-export { default as Pannel } from './components/Pannel';
+export { default as Panel } from './components/Panel';
 export { default as Progress } from './components/Progress';
 export { default as Protal } from './components/Protal';
 export { default as Rect } from './components/Rect';
