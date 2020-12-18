@@ -1,3 +1,3 @@
-import Pannel from './Pannel';
+import Panel from './Panel';
 
-export { Pannel as default };
+export { Panel as default };
