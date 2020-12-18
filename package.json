@@ -15,6 +15,7 @@
   "scripts": {
     "test": "jest --env=jsdom --config ./jest.config.js",
     "test:watch": "jest --watchAll --env=jsdom --config ./jest.config.js",
+    "test:updateSnapshot": "jest --updateSnapshot",
     "start": "npm run dev",
     "dev": "npx styleguidist server",
     "build": "rm -rf dist && babel src --out-dir dist",
