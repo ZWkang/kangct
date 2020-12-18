@@ -1,7 +1,7 @@
 ```js
-<Pannel> default</Pannel>
-<Pannel paddingSize="s"> paddingSize="s"</Pannel>
-<Pannel paddingSize="m"> paddingSize="m"</Pannel>
-<Pannel paddingSize="l"> paddingSize="l" </Pannel>
-<Pannel paddingSize="l" hover shadow> paddingSize="l"</Pannel>
+<Panel> default</Panel>
+<Panel paddingSize="s"> paddingSize="s"</Panel>
+<Panel paddingSize="m"> paddingSize="m"</Panel>
+<Panel paddingSize="l"> paddingSize="l" </Panel>
+<Panel paddingSize="l" hover shadow> paddingSize="l"</Panel>
 ```
