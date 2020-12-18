@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
 
 class Heading extends Component {
   constructor(props) {
