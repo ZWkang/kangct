@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
-import styled from 'styled-components';
-import invariant from 'tiny-invariant';
 
-class Protal extends Component {
+class Portal extends Component {
   static parentNode = null;
   static defaultProps = {
     show: false,
@@ -15,7 +13,7 @@ class Protal extends Component {
   }
   componentWillMount() {
     this.settleElement();
-    this.appendChildElemen();
+    this.appendChildElement();
   }
   componentDidMount() {
     this.settleElement();
@@ -23,10 +21,9 @@ class Protal extends Component {
       this.forceUpdate();
     }
   }
-  appendChildElemen = () => {
+  appendChildElement = () => {
     const { target } = this.props;
     const targetElement = document.querySelector(target);
-    // debugger
     if (targetElement === null) {
       this.parentNode = document.createElement('div');
       document.body.appendChild(this.parentNode);
@@ -52,4 +49,4 @@ class Protal extends Component {
     return createPortal(children, this.parentNode);
   }
 }
-export default Protal;
+export default Portal;

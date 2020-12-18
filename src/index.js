@@ -62,7 +62,7 @@ export { default as Loading } from './components/Loading';
 export { default as Pagination } from './components/Pagination';
 export { default as Panel } from './components/Panel';
 export { default as Progress } from './components/Progress';
-export { default as Protal } from './components/Protal';
+export { default as Portal } from './components/Portal';
 export { default as Rect } from './components/Rect';
 export { default as ScrollTo } from './components/scrollTo';
 export { default as Tab } from './components/Tab';
@@ -70,7 +70,7 @@ export { default as Table } from './components/Table';
 export { default as Toggle } from './components/Toggle';
 export { default as ToolTips } from './components/ToolTips';
 
-export { default as Lozyload } from './components/Lazyload';
+export { default as LazyLoad } from './components/LazyLoad';
 
 export { default as Intl } from './components/Intl';
 

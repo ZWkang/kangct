@@ -1,3 +1,3 @@
-import Protal from './Protal';
+import Portal from './Portal';
 
-export { Protal as default };
+export { Portal as default };
