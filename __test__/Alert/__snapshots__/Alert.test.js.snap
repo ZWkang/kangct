@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert bahavie test test props snapshot 1`] = `
+exports[`Alert behavior test test props snapshot 1`] = `
 initialize {
   "0": Object {
     "attribs": Object {
-      "class": "sc-bdVaJa ozvmN",
+      "class": "sc-bdVaJa bIfvBd",
       "type": "success",
     },
     "children": Array [
