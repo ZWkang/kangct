@@ -1,6 +1,18 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+const flexDirectionRow = css`
+  ${(props) => props.horizontal && 'flex-direction: row;'}
+`;
+
+const textAlign = css`
+  ${(props) => props.align && 'text-align: ' + props.align + ';'}
+`;
+
+const cardLinkNormal = css`
+  ${(props) => props.normal || 'color: white;background-color: #007bff;border: 1px solid #007bff;'}
+`;
+
 const CardContainer = styled.div`
   position: relative;
   display: flex;
@@ -10,16 +22,8 @@ const CardContainer = styled.div`
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 6px;
-  ${(props) =>
-    props.horizontal &&
-    css`
-      flex-direction: row;
-    `}
-  ${(props) =>
-    props.align &&
-    css`
-      text-align: ${props.align};
-    `}
+  ${flexDirectionRow}
+  ${textAlign}
 `;
 
 const CardBody = styled.div`
@@ -36,14 +40,7 @@ const CardLink = styled.a`
   padding: 0.375em 0.75em;
   border-radius: 6px;
   display: inline-block;
-
-  ${(props) =>
-    props.normal ||
-    css`
-      color: white;
-      background-color: #007bff;
-      border: 1px solid #007bff;
-    `}
+  ${cardLinkNormal}
   & + & {
     margin-left: 24px;
   }
@@ -68,7 +65,7 @@ const Card = CardContainer;
 // Card.Container = CardContainer;
 Card.Body = CardBody;
 Card.Link = CardLink;
-Card.Link.displayName = 'CardLink'
+Card.Link.displayName = 'CardLink';
 Card.Header = CardHeader;
 Card.Footer = CardFooter;
 // export Body
