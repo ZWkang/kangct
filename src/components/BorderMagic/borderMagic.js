@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { transfromData } from '../util/index.js';
+import { transformData } from '../util/index.js';
 // import warning from 'warning';
-import invariant from 'tiny-invariant'
+import invariant from 'tiny-invariant';
 
 const BASIC_SIZE = 10;
 
@@ -31,10 +31,10 @@ const maxXorY = (matrixArray = [], bool = false) => {
 };
 
 const BorderMagicWrapper = (props) => {
-  const { isDubleTwo, matrixArray, isDuble } = props;
+  const { isDoubleTwo, matrixArray, isDouble } = props;
   let useArray = null;
-  if (isDuble) {
-    const AccumulateNumber = !!isDubleTwo ? 1 : 0;
+  if (isDouble) {
+    const AccumulateNumber = !!isDoubleTwo ? 1 : 0;
     const maxX = maxXorY(matrixArray, true);
     useArray = matrixArray
       .map((v) => {
@@ -88,7 +88,7 @@ class BorderMagicCom extends React.Component {
   async componentDidMount() {
     let { imageUrl, matrixArray } = this.props;
     invariant(imageUrl, '确认是否漏传imageUrl');
-    matrixArray = matrixArray || (await transfromData({ imageUrl }));
+    matrixArray = matrixArray || (await transformData({ imageUrl }));
     this.setState({
       matrixArray
     });
