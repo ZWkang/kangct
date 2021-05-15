@@ -143,12 +143,10 @@ const getProps = (val) => (props) => props[val];
 const Column = styled.div`
   position: relative;
   box-sizing: border-box;
-  display: inline-block;
   min-height: 1px;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   float: left;
-
   &:after {
     clear: both;
     content: ' ';

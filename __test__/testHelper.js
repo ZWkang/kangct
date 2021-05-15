@@ -2,9 +2,9 @@
 import { mount, shallow, render } from 'enzyme';
 
 function setUp(type, ...arg) {
-  const [Component, props = {}, children = ''] = arg
-  if(~['mount', 'shaloow', 'render'].indexOf(type)) {
-    return global[type](<Component {...props}>{children}</Component>)
+  const [Component, props = {}, children = ''] = arg;
+  if (~['mount', 'shallow', 'render'].indexOf(type)) {
+    return global[type](<Component {...props}>{children}</Component>);
   }
 }
 
@@ -14,15 +14,15 @@ export function AutoMath(Component, props = {}, children = '') {
 }
 
 export function ComponentRenderWithoutError(Component, props = {}, children = '') {
-  const wrapper = setUp('mount',Component, props, children);
+  const wrapper = setUp('mount', Component, props, children);
   expect(() => {
     wrapper.setProps({});
     wrapper.unmount();
   }).not.toThrow();
 }
 
-export function childrenShouldbeProps(Component, children) {
-  const wrapper = setUp('mount',Component, {}, children)
+export function childrenShouldBeProps(Component, children) {
+  const wrapper = setUp('mount', Component, {}, children);
 
   expect(wrapper.get(0).props.children).toEqual(children);
 }

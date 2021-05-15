@@ -5,51 +5,52 @@ import is from 'styled-is';
 
 const colorMaps = {
   success: {
-    bgcolor: 'rgb(212, 237, 217);',
+    bgColor: 'rgb(212, 237, 217);',
     color: 'rgb(20, 86, 35);',
-    bdcolor: 'rgb(194, 230, 202);'
+    bdColor: 'rgb(194, 230, 202);'
   },
   info: {
-    bgcolor: 'rgb(208, 236, 240);',
+    bgColor: 'rgb(208, 236, 240);',
     color: 'rgb(11, 84, 95);',
-    bdcolor: 'rgb(190, 228, 235);'
+    bdColor: 'rgb(190, 228, 235);'
   },
   danger: {
-    bgcolor: 'rgb(248, 214, 217);',
+    bgColor: 'rgb(248, 214, 217);',
     color: 'rgb(114, 27, 35);',
-    bdcolor: 'rgb(245, 198, 202);'
+    bdColor: 'rgb(245, 198, 202);'
   },
   warning: {
-    bgcolor: 'rgb(255, 242, 205);',
+    bgColor: 'rgb(255, 242, 205);',
     color: 'rgb(132, 100, 3);',
-    bdcolor: 'rgb(255, 237, 185);'
+    bdColor: 'rgb(255, 237, 185);'
   },
   secondary: {
-    bgcolor: 'rgb(225, 227, 229);',
+    bgColor: 'rgb(225, 227, 229);',
     color: 'rgb(56, 60, 65);',
-    bdcolor: 'rgb(225, 227, 229);'
+    bdColor: 'rgb(225, 227, 229);'
   }
 };
 
 const handleAlertTypeColorChoose = (maps) => (name) => (props) => {
-  let mapkey = props[name];
-  const mapkeys = Object.keys(maps);
-  if (~mapkeys.indexOf(mapkey) >= 0) {
-    mapkey = mapkeys[0];
+  let mapKey = props[name];
+  const mapKeys = Object.keys(maps);
+  if (~mapKeys.indexOf(mapKey) >= 0) {
+    mapKey = mapKeys[0];
   }
   return css`
-    ${Object.keys(maps[mapkey])
+    ${Object.keys(maps[mapKey])
       .map((item, index, source) => {
-        if (item === 'bgcolor') {
-          return `background-color: ${maps[mapkey][item]}`;
+        if (item === 'bgColor') {
+          return `background-color: ${maps[mapKey][item]}`;
         }
         if (item === 'color') {
-          return `color: ${maps[mapkey][item]}`;
+          return `color: ${maps[mapKey][item]}`;
         }
-        if (item === 'bdcolor') {
-          return `border-color: ${maps[mapkey][item]}`;
+        if (item === 'bdColor') {
+          return `border-color: ${maps[mapKey][item]}`;
         }
       })
+      .filter(Boolean)
       .join('')}
   `;
 };
@@ -66,8 +67,8 @@ const AlertWrapper = styled.div`
   border-radius: 0.25rem;
   border-color: rgb(236, 204, 197);
   ${is('type')`
-        ${handleAlertTypeColorChoose(colorMaps)('type')}
-    `}
+    ${handleAlertTypeColorChoose(colorMaps)('type')}
+  `}
 `;
 const AlertClose = styled.i`
   position: absolute;
@@ -91,15 +92,13 @@ const AlertMessage = styled.div`
 `;
 
 /**
- * autoclose
- * closetime
+ * autoClose
+ * closeTime
  * type
  * title
  * message
- * canclose
+ * canClose
  * show
- *
- *
  * onclose
  */
 class Alert extends Component {
@@ -111,11 +110,11 @@ class Alert extends Component {
   }
   static defaultProps = {
     canClose: false,
-    autoclose: false,
+    autoClose: false,
     type: 'info',
     title: '',
     show: true,
-    closetime: 2000
+    closeTime: 2000
   };
   componentWillReceiveProps(nextProps) {
     if (nextProps.show !== this.state.show) {
@@ -125,12 +124,12 @@ class Alert extends Component {
     }
   }
   componentDidMount() {
-    const { autoclose, closetime = 2000 } = this.props;
+    const { autoClose, closeTime = 2000 } = this.props;
 
-    if (autoclose === true) {
+    if (autoClose === true) {
       setTimeout(() => {
         this.handleAlertClose();
-      }, closetime);
+      }, closeTime);
     }
   }
   handleAlertClose = (e) => {
@@ -163,10 +162,10 @@ class Alert extends Component {
 
 Alert.propTypes = {
   canClose: PropTypes.bool,
-  autoclose: PropTypes.bool,
+  autoClose: PropTypes.bool,
   type: PropTypes.string,
   title: PropTypes.string,
   show: PropTypes.bool,
-  closetime: PropTypes.number
+  closeTime: PropTypes.number
 };
 export default Alert;

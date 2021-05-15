@@ -13,9 +13,9 @@ class Toggle extends Component {
   renderToggle = () => {
     const { children, render, component, ...restProps } = this.props;
     const toggleProps = { on: this.state.on, toggle: this.toggle };
-    const ChildenIsFunc = (child) => typeof child === 'function';
+    const ChildrenIsFunc = (child) => typeof child === 'function';
 
-    return children && ChildenIsFunc(children)
+    return children && ChildrenIsFunc(children)
       ? children({ ...restProps, ...toggleProps })
       : component
       ? React.createElement(component, { ...restProps, ...toggleProps })

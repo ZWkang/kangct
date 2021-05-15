@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import is from 'styled-is';
-import { FlexPropsTypes, FlexCommonPorps } from './props.js';
+import { FlexPropsTypes, FlexCommonProps } from './props.js';
 
 // 样式分离
 // css in js
@@ -70,7 +70,7 @@ const Flex = styled.div`
 `;
 
 Flex.propTypes = FlexPropsTypes;
-Flex.defaultProps = FlexCommonPorps;
+Flex.defaultProps = FlexCommonProps;
 
 /**
  * @components Flex

@@ -1,6 +1,6 @@
-import React, { Componnet } from 'react';
+import React, { Component } from 'react';
 
-export default class CloseWithEscape extends Componnet {
+export default class CloseWithEscape extends Component {
   componentDidMount() {
     document.addEventListener('keydown', this.onEscape);
   }

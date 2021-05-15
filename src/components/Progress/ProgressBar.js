@@ -46,9 +46,9 @@ const ProgressBar = styled.progress`
     height: ${(props) => sizeMap[props.size]}px;
   `}
   &:indeterminate {
-    ${is('colortype')`
+    ${is('colorType')`
       background-image: linear-gradient(to right, ${(props) =>
-        colors[props.colortype] || colors['normal']} 30%,#dbdbdb 30%);
+        colors[props.colorType] || colors['normal']} 30%,#dbdbdb 30%);
     `}
     animation: ${moveIndeterminate} 1.5s linear infinite;
     animation-timing-function: linear;
@@ -56,18 +56,18 @@ const ProgressBar = styled.progress`
     background-position: top left;
     background-repeat: no-repeat;
     background-size: 150% 150%;
-    &::-webkit-progress-bar{
+    &::-webkit-progress-bar {
       background-color: transparent;
     }
-    &::-moz-progress-bar{
+    &::-moz-progress-bar {
       background-color: transparent;
     }
   }
 
-  &::-webkit-progress-bar{
+  &::-webkit-progress-bar {
     background-color: hsl(0, 0%, 86%);
   }
-  &::-webkit-progress-value{
+  &::-webkit-progress-value {
     background-color: hsl(0, 0%, 29%);
   }
 `;

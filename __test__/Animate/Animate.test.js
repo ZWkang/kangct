@@ -1,23 +1,23 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Animate from '@app/Animate/index.js';
-import { AutoMath, ComponentRenderWithoutError, childrenShouldbeProps } from '../testHelper';
+import { AutoMath, ComponentRenderWithoutError, childrenShouldBeProps } from '../testHelper';
 import 'jest-styled-components';
 
 function noop() {}
 function createAnimateProps({
-  funcname = 'bounce',
+  funcName = 'bounce',
   duration = 2000,
   delay = 0,
   onAnimationEnd = noop,
-  keyframesFuntion = noop
+  keyframesFunction = noop
 }) {
   return {
-    funcname,
+    funcName,
     duration,
     delay,
     onAnimationEnd,
-    keyframesFuntion
+    keyframesFunction
   };
 }
 // 分成对应的describe
@@ -31,7 +31,7 @@ describe('Animate Component', () => {
     ComponentRenderWithoutError(Animate, {}, <p>asda</p>);
   });
   it('match snapshot', () => {
-    AutoMath(Animate, { funcname: 'bounce', duration: 3000 }, <h1>here is a simple test</h1>);
+    AutoMath(Animate, { funcName: 'bounce', duration: 3000 }, <h1>here is a simple test</h1>);
   });
   it('test animation work?', () => {
     jest.useFakeTimers();
@@ -48,23 +48,23 @@ describe('Animate Component', () => {
     expect(animationend).toBeCalled();
   });
   it('test more function name', () => {
-    const bounceAnimationPropss = createAnimateProps({ funcname: 'bounce' });
+    const bounceAnimationProps = createAnimateProps({ funcName: 'bounce' });
 
-    const bounceAnimation = mount(<Animate {...bounceAnimationPropss}>test</Animate>);
+    const bounceAnimation = mount(<Animate {...bounceAnimationProps}>test</Animate>);
     expect(bounceAnimation.text()).toEqual('test');
 
     // console.log(bounceAnimation.debug());
     // console.log(bounceAnimation.get(0));
-    expect(bounceAnimation.get(0).props.funcname).toEqual('bounce');
-    const bounceInAnimationProps = createAnimateProps({ funcname: 'bounceIn' });
+    expect(bounceAnimation.get(0).props.funcName).toEqual('bounce');
+    const bounceInAnimationProps = createAnimateProps({ funcName: 'bounceIn' });
 
     const bounceInAnimation = mount(<Animate {...bounceInAnimationProps}>test</Animate>);
     expect(bounceInAnimation.text()).toEqual('test');
 
-    expect(bounceInAnimation.get(0).props.funcname).toEqual('bounceIn');
+    expect(bounceInAnimation.get(0).props.funcName).toEqual('bounceIn');
   });
 
   it('children should be props', () => {
-    childrenShouldbeProps(Animate, <p>test</p>);
+    childrenShouldBeProps(Animate, <p>test</p>);
   });
 });

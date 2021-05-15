@@ -4,7 +4,7 @@ exports[`Card Card rendering auto match snapshot 1`] = `
 initialize {
   "0": Object {
     "attribs": Object {
-      "class": "sc-bdVaJa kYAzcx",
+      "class": "sc-bdVaJa bWiYWI",
     },
     "children": Array [],
     "name": "div",
@@ -49,7 +49,7 @@ exports[`Card#CardLink auto match snapshot 1`] = `
 initialize {
   "0": Object {
     "attribs": Object {
-      "class": "sc-htpNat fGvwAG",
+      "class": "sc-htpNat fEVjhQ",
     },
     "children": Array [],
     "name": "a",

@@ -38,45 +38,45 @@ const noop = () => {};
 const Button = styled.button.attrs((props) => ({
   disabled: props.disabled === true ? props.disabled : false,
   active: props.disabled === true ? props.active : false,
-  role: 'botton',
+  role: 'button',
   tabIndex: 0
 }))`
-    & + &{
-        margin-left: 10px;
-    }
-    appearance: none;
-    cursor: pointer;
-    border-radius: 6px;
-    padding: calc(0.375em - 1px) 0.75em;
+  & + & {
+    margin-left: 10px;
+  }
+  appearance: none;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: calc(0.375em - 1px) 0.75em;
 
-    line-height: 1.5;
-    border-width: 1px solid #dbdbdb;
+  line-height: 1.5;
+  border-width: 1px solid #dbdbdb;
 
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
-    vertical-align: top;
+  vertical-align: top;
 
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    font-size: 1em;
+  font-size: 1em;
 
-    :not(:disabled):hover{
-        opacity: 0.9;
-    }
+  :not(:disabled):hover {
+    opacity: 0.9;
+  }
 
-    :not(:disabled):hover,
-    :not(:disabled):active{
-        /* box-shadow: 0 0 0 0.125em rgba(50,115,220,.2); */
-        border-color: #4a4a4a;
-        color: #363636;
-    }
+  :not(:disabled):hover,
+  :not(:disabled):active {
+    /* box-shadow: 0 0 0 0.125em rgba(50,115,220,.2); */
+    border-color: #4a4a4a;
+    color: #363636;
+  }
 
-    /* TODO: 颜色反相 */
-    /* ${is('hover')`
+  /* TODO: 颜色反相 */
+  /* ${is('hover')`
         :not(:disabled):hover{
             background: #000;
             // color: #fff;
@@ -84,29 +84,29 @@ const Button = styled.button.attrs((props) => ({
         }
     `} */
 
-    :not(:disabled):active {
-        border-color: #4a4a4a;
-        opacity: 1;
-    }
+  :not(:disabled):active {
+    border-color: #4a4a4a;
+    opacity: 1;
+  }
 
-    :not(:active):focus {
-        border-color: #3273dc;
-        color: #363636;
-        position: relative;
-        box-shadow: 0 0 0 0.125em rgba(50,115,220,.2);
-        /* outline: 2px auto rgba(19,124,189,.6);
+  :not(:active):focus {
+    border-color: #3273dc;
+    color: #363636;
+    position: relative;
+    box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.2);
+    /* outline: 2px auto rgba(19,124,189,.6);
         outline-offset: 2px; */
-        /* z-index: ${ButtonFocusZIndex}; */
-        position:relative;
-    }
+    /* z-index: ${ButtonFocusZIndex}; */
+    position: relative;
+  }
 
-    /* user-select:none; */
-    ${is('disabled')`
+  /* user-select:none; */
+  ${is('disabled')`
         cursor: not-allowed;
         background: #ccc;
         opacity: 0.8;
     `}
-    ${is('small')`
+  ${is('small')`
         font-size: 0.75em;
     `}
     ${is('medium')`

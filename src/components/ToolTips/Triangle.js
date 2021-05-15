@@ -8,10 +8,6 @@ const TriangleMaps = {
   right: []
 };
 
-const rorateRange = ['right', 'left', 'top', 'bottom'];
-
-const defaultRorate = 'left';
-
 // const afterIShadow = css`
 //   &::after {
 //     content: ' ';
@@ -37,7 +33,7 @@ const Triangle = styled.div`
   padding: 4px 8px;
   border-radius: 2px;
   background: #4a4a4a;
-  
+
   white-space: nowrap;
   font-size: 12px;
   color: white;
@@ -45,7 +41,7 @@ const Triangle = styled.div`
       margin-bottom: 5px;
       
     `}
-    ${is('right')`
+  ${is('right')`
       margin-left: 5px;
     `}
     ${is('left')`
@@ -54,8 +50,8 @@ const Triangle = styled.div`
     ${is('bottom')`
       margin-top: 5px;
     `}
-  &:after{
-    content: "";
+  &:after {
+    content: '';
 
     border: 5px solid transparent;
     height: 0;
@@ -90,7 +86,6 @@ const Triangle = styled.div`
     z-index: 112;
     /* left: 50%; */
     /* transform: translateX(-50%); */
-    
   }
 `;
 Triangle.defaultProps = {

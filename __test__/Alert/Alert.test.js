@@ -6,7 +6,7 @@ import 'jest-styled-components';
 
 // https://github.com/airbnb/enzyme/issues/1798 dive vs shallow
 describe('Alert', () => {
-  describe('bahavie test', () => {
+  describe('behavior test', () => {
     it('render without error', () => {
       ComponentRenderWithoutError(Alert);
     });
@@ -39,7 +39,7 @@ describe('Alert', () => {
       jest.useFakeTimers();
       const onClose = jest.fn();
       const wrapper = shallow(
-        <Alert autoclose closetime={2000} title="title test" onClose={onClose} />
+        <Alert autoClose closeTime={2000} title="title test" onClose={onClose} />
       );
       jest.advanceTimersByTime(3000);
       expect(setTimeout).toHaveBeenCalledTimes(1);

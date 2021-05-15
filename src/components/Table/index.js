@@ -46,14 +46,12 @@ class Table extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {data.map(([name, age, hobby, city, sex], index) => {
+          {data.map((columnData, index) => {
             return (
-              <TableTr key={index + name}>
-                <TableTd>{name}</TableTd>
-                <TableTd>{age}</TableTd>
-                <TableTd>{hobby}</TableTd>
-                <TableTd>{city}</TableTd>
-                <TableTd>{sex}</TableTd>
+              <TableTr key={index + columnData[0]}>
+                {columnData.map((columnDataItem, i) => (
+                  <TableTd key={i}>{columnDataItem}</TableTd>
+                ))}
               </TableTr>
             );
           })}
