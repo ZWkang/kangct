@@ -1,6 +1,6 @@
 import React from 'react';
 import { BreadcrumbWrapper, BreadcrumbColWrapper } from './BreadcrumbWrapper';
-import { Span, Alink, LiCom } from './BreadcumbItem';
+import { Span, Alink, LiCom } from './BreadcrumbItem';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 

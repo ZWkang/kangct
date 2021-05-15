@@ -28,7 +28,7 @@ describe('Breadcrumb', () => {
       wrapper.unmount();
       expect(unmount).toBeCalled();
     });
-    it('render as a function shoule be work', () => {
+    it('render as a function should be work', () => {
       const breadsData = [
         {
           link: '/tets',
