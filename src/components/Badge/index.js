@@ -16,10 +16,10 @@ const Badge = styled.span`
   border: 1px solid #ccc;
   background: #eee;
   ${is('solid')`
-        color: #fff;
-        border: 0;
-        background: #000;
-    `}
+    color: #fff;
+    border: 0;
+    background: #000;
+  `}
 `;
 
 Badge.propsTypes = {
@@ -32,7 +32,7 @@ const BadgeContainer = styled.div`
   width: auto;
   height: auto;
 `;
-const BadgeContengt = styled.div`
+const BadgeContent = styled.div`
   position: absolute;
   top: -9px;
   right: -18px;
@@ -46,7 +46,7 @@ const Wrapper = ({ children, content }) => {
   return (
     <BadgeContainer>
       {children}
-      <BadgeContengt>{content}</BadgeContengt>
+      <BadgeContent>{content}</BadgeContent>
     </BadgeContainer>
   );
 };
