@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import is from 'styled-components';
 
 const LoadingWrapper = styled.section`
   display: flex;
@@ -25,7 +24,7 @@ const LoadingAuthor = styled.p`
   display: block;
 `;
 
-const LoadingKeyframs = keyframes`
+const LoadingKeyframes = keyframes`
  to {  transform: rotate(1turn) }
 `;
 
@@ -37,17 +36,11 @@ const LoadingItem = styled.div`
   border-left-color: rgba(3, 155, 229, 1);
   border-top-color: rgba(3, 155, 229, 1);
   border-radius: 50%;
-  animation: ${LoadingKeyframs} infinite linear;
+  animation: ${LoadingKeyframes} infinite linear;
 `;
 
 const Loading = ({ loading, speed = 3000, title, author }) => {
-  const [isloading, setLoading] = useState(loading);
-
-  useEffect(() => {
-    setLoading(loading);
-  }, [loading]);
-
-  if (!isloading) return null;
+  if (!loading) return null;
 
   const itemStyle = {
     animationDuration: speed + 'ms'
