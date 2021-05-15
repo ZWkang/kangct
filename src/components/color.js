@@ -1,4 +1,4 @@
-const colorPennel = {
+const colorPanel = {
   primary: '#cce5ff',
   secondary: '#e2e3e5',
   success: '#d4edda',
@@ -9,4 +9,4 @@ const colorPennel = {
   dark: '#d6d8d9'
 };
 
-export default colorPennel;
+export default colorPanel;
