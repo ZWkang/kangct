@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Triangle from './Triangle';
 import Rect from '../Rect';
 import Portal from '../Portal';
-import TooltipsWrapper from './TooltipsWrapper';
 
 const varTrans = (name) => (props) =>
   `
@@ -88,11 +87,11 @@ class ToolTips extends Component {
         top = 0;
         break;
     }
-    const propss = { [position]: true };
+    const props = { [position]: true };
     return (
       <Position left={left} top={top}>
-        <Tool {...propss}>
-          <Triangle {...propss}>{this.props.children}</Triangle>
+        <Tool {...props}>
+          <Triangle {...props}>{this.props.children}</Triangle>
         </Tool>
       </Position>
     );
