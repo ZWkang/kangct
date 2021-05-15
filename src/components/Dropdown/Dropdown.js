@@ -78,7 +78,7 @@ class Dropdown extends Component {
       title: title
     });
   };
-  handleItemClick = (item, e) => {
+  handleItemClick = (item) => (e) => {
     const { onClick } = this.props;
     onClick && onClick(item, e);
   };
@@ -112,7 +112,7 @@ class Dropdown extends Component {
                 >
                   <UlContainer style={{ padding: '0' }}>
                     {list.map((item, index) => {
-                      const handleItemClick = this.handleItemClick.bind(this, item);
+                      const handleItemClick = this.handleItemClick(item);
                       return (
                         <DropdownItem title={item} onClick={handleItemClick} key={item + index} />
                       );
