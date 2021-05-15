@@ -18,7 +18,7 @@
 
 ```js
 // babel ^6.0.0
-presets: [require('kangct/babel.config.user.js')];
+presets: [require('kangct/dist/babel.config.user.js')];
 // babel-plugin-import for kangct preset..
 ```
 
