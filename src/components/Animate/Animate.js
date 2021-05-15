@@ -5,11 +5,11 @@ import React, { Component } from 'react';
 // import omit from 'lodash.omit';
 import { Object_omit as omit } from '../util/index.js';
 
-const generatorComponent = ({ name, duration, keyframesFuntion, delay }) => {
-  const animateKeyframs = keyframes`${keyframesFuntion || animated[name]}`;
+const generatorComponent = ({ name, duration, keyframesFunction, delay }) => {
+  const animateKeyframes = keyframes`${keyframesFunction || animated[name]}`;
   const Wrapper = styled.div`
     will-change: contents;
-    animation: ${animateKeyframs};
+    animation: ${animateKeyframes};
     animation-duration: ${duration || 0}ms;
     animation-delay: ${delay || 0}ms;
   `;
@@ -21,8 +21,8 @@ class Animate extends Component {
   constructor(props) {
     super(props);
     this.RenderComponent = generatorComponent({
-      keyframesFuntion: props.keyframesFuntion,
-      name: props.funcname,
+      keyframesFunction: props.keyframesFunction,
+      name: props.funcName,
       duration: props.duration,
       delay: props.delay
     });
@@ -30,11 +30,11 @@ class Animate extends Component {
   render() {
     const childProps = Object.assign({}, this.props);
     const omitProps = omit(childProps, [
-      'funcname',
+      'funcName',
       'children',
       'name',
       'duration',
-      'keyframesFuntion',
+      'keyframesFunction',
       'delay',
       'onAnimationEnd'
     ]);
@@ -53,13 +53,13 @@ class Animate extends Component {
 }
 
 Animate.propTypes = {
-  keyframesFuntion: PropTypes.func,
+  keyframesFunction: PropTypes.func,
   name: PropTypes.string,
   duration: PropTypes.number
 };
 
 Animate.defaultProps = {
-  keyframesFuntion: void 666,
+  keyframesFunction: void 666,
   name: '',
   duration: 0,
   onAnimationEnd: () => {}
