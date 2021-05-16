@@ -35,6 +35,18 @@
   "files": [
     "dist"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --config ./.prettierrc.js --write",
+      "git add"
+    ]
+  },
   "homepage": "https://github.com/ZWkang/kangct#readme",
   "private": false,
   "devDependencies": {
@@ -68,7 +80,10 @@
     "webpack": "^4.17.2",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.11"
+    "webpack-dev-server": "^3.1.11",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "husky": "^6.0.0"
   },
   "dependencies": {
     "focus-trap-react": "^6.0.0",
