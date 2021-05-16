@@ -32,6 +32,10 @@ npm install kangct --save-dev
 
 ---
 
+## Changelog
+
+[Here is the changelog](./CHANGELOG.md)
+
 ## LICENSE
 
 MIT

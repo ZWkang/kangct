@@ -45,36 +45,6 @@ module.exports = {
           test: /(\.js?$)|(\.jsx?$)|(\.md?$)/,
           exclude: /node_modules/,
           loader: 'babel-loader'
-        },
-        {
-          test: /\.css$/,
-          loader: 'style-loader!css-loader'
-        },
-        {
-          test: /\.scss$/,
-          use: [
-            'style-loader', // creates style nodes from JS strings
-            'css-loader', // translates CSS into CommonJS
-            'sass-loader' // compiles Sass to CSS, using Node Sass by default
-          ]
-        },
-        {
-          test: /\.(gif|png|jpe?g|svg)$/i,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: '[name].[ext]',
-                outputPath: 'images/'
-              }
-            },
-            {
-              loader: 'image-webpack-loader',
-              options: {
-                bypassOnDebug: true
-              }
-            }
-          ]
         }
       ]
     },
@@ -85,9 +55,7 @@ module.exports = {
       }
     }
   },
-  require: [
-    'babel-polyfill'
-  ],
+  require: ['babel-polyfill'],
   getExampleFilename(componentPath) {
     let componentList = componentPath.split('/');
     let componentName = componentList[componentList.length - 2].toLowerCase();
