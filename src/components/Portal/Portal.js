@@ -17,7 +17,6 @@ function Portal(props) {
   const parentNode = useRef(null);
   const isInsertNode = useRef(false);
   const forceUpdate = useForceUpdate();
-  console.log(target, props);
 
   useEffect(() => {
     const element = getElement(target);
