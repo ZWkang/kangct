@@ -1,52 +1,44 @@
-import React, { Component } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import useForceUpdate from './useForceUpdate';
 
-class Portal extends Component {
-  static parentNode = null;
-  static defaultProps = {
-    show: false,
-    zIndex: 1060,
-    target: 'body'
-  };
-  constructor(props) {
-    super(props);
+function getElement(type) {
+  if (typeof type === 'string') {
+    return document.querySelector(type);
+  } else if (type instanceof HTMLElement || (type && type.current instanceof HTMLElement)) {
+    return type;
+  } else {
+    return null;
   }
-  componentWillMount() {
-    this.settleElement();
-    this.appendChildElement();
-  }
-  componentDidMount() {
-    this.settleElement();
-    if (this.parentNode !== null) {
-      this.forceUpdate();
-    }
-  }
-  appendChildElement = () => {
-    const { target } = this.props;
-    const targetElement = document.querySelector(target);
-    if (targetElement === null) {
-      this.parentNode = document.createElement('div');
-      document.body.appendChild(this.parentNode);
+}
+
+function Portal(props) {
+  const { children, target, customElementType = 'div' } = props;
+  const parentNode = useRef(null);
+  const isInsertNode = useRef(false);
+  const forceUpdate = useForceUpdate();
+  console.log(target, props);
+
+  useEffect(() => {
+    const element = getElement(target);
+    if (!element) {
+      parentNode.current = document.createElement(customElementType);
+      document.body.appendChild(parentNode.current);
+      isInsertNode.current = true;
     } else {
-      return;
+      parentNode.current = element;
+      isInsertNode.current = false;
     }
-  };
-  settleElement() {
-    let { target } = this.props;
-    if (typeof target === 'string') {
-      this.parentNode = document.querySelector(target);
-    } else if (target instanceof HTMLElement) {
-      this.parentNode = target;
-    } else {
-      this.parentNode = document.createElement('div');
-    }
-  }
-  componentWillUnmount() {
-    this.parentNode = null;
-  }
-  render() {
-    const { children } = this.props;
-    return createPortal(children, this.parentNode);
-  }
+
+    forceUpdate();
+
+    return () => {
+      if (isInsertNode.current) {
+        document.body.removeChild(parentNode.current);
+      }
+    };
+  }, [target]);
+
+  return parentNode.current ? createPortal(children, parentNode.current) : null;
 }
 export default Portal;
