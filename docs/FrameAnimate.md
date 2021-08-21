@@ -1,0 +1,13 @@
+```jsx
+<h2>序列帧动画</h2>
+<p>我自己算过！确实走了40帧！！</p>
+<FrameAnimate
+  source="https://user-images.githubusercontent.com/15853907/130327418-eb99c4b0-0d44-444f-aa51-0f3b9dff9b33.jpeg"
+  width={160}
+  height={90}
+  frames={40}
+  duration={10000}
+  imageW={1600}
+  imageH={900}
+/>
+```

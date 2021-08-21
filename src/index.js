@@ -1,5 +1,5 @@
 export { default as Alert } from './components/Alert';
-export { default as Animate, Animation } from './components/Animate';
+export { default as Animate } from './components/Animate';
 export { default as Accordion, Collapse } from './components/Accordion';
 export { default as Box } from './components/Box';
 export { default as Badge } from './components/Badge';
@@ -43,7 +43,6 @@ export {
   default as Hero,
   HeroBody,
   HeroA,
-  HeroContainer,
   HeroH1,
   HeroLeft,
   HeroRight,
@@ -64,3 +63,4 @@ export { default as Table } from './components/Table';
 export { default as Toggle } from './components/Toggle';
 export { default as ToolTips } from './components/ToolTips';
 export { default as LazyLoad } from './components/LazyLoad';
+export { default as FrameAnimate } from './components/FrameAnimate';
