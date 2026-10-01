@@ -41,6 +41,7 @@ const BadgeContent = styled.div`
   color: #fff;
   padding: 0 6px;
   font-size: 12px;
+  z-index: 1;
 `;
 const Wrapper = ({ children, content }) => {
   return (
